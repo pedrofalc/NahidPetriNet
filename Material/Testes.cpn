@@ -35,13 +35,13 @@
         <ml id="ID1414486557">val e4 = 1`(24.00);
           <layout>val e4 = 1`(24.00);</layout>
         </ml>
-        <ml id="ID1414516093">val e5 = 1`(1);
-          <layout>val e5 = 1`(1);</layout>
+        <ml id="ID1414516093">val e5 = 1`(0);
+          <layout>val e5 = 1`(0);</layout>
         </ml>
         <ml id="ID1414530058">val e6 = 1`(4) ++
-1`(5);
+1`(3);
           <layout>val e6 = 1`(4) ++
-1`(5);</layout>
+1`(3);</layout>
         </ml>
         <ml id="ID1414589129">val e7 = 1`(4.00);
           <layout>val e7 = 1`(4.00);</layout>
@@ -103,10 +103,24 @@
         </var>
         <var id="ID1414544584">
           <type>
-            <id>BOOL</id>
+            <id>data</id>
           </type>
           <id>d2</id>
-          <layout>var d2: BOOL;</layout>
+          <layout>var d2: data;</layout>
+        </var>
+        <var id="ID1414577593">
+          <type>
+            <id>data</id>
+          </type>
+          <id>d1</id>
+          <layout>var d1:data;</layout>
+        </var>
+        <var id="ID1414592370">
+          <type>
+            <id>data</id>
+          </type>
+          <id>d</id>
+          <layout>var d:data;</layout>
         </var>
         <ml id="ID1412338334">val t = 4;
           <layout>val t = 4;</layout>
@@ -164,20 +178,6 @@
           <real/>
           <layout>colset REAL = real;</layout>
         </color>
-        <var id="ID1414577593">
-          <type>
-            <id>REAL</id>
-          </type>
-          <id>d1</id>
-          <layout>var d1:REAL;</layout>
-        </var>
-        <var id="ID1414575188">
-          <type>
-            <id>REAL</id>
-          </type>
-          <id>d</id>
-          <layout>var d: REAL;</layout>
-        </var>
         <color id="ID1414492254">
           <id>dataraiz</id>
           <alias>
@@ -185,6 +185,20 @@
           </alias>
           <layout>colset dataraiz = REAL;</layout>
         </color>
+        <var id="ID1414592629">
+          <type>
+            <id>REAL</id>
+          </type>
+          <id>div1</id>
+          <layout>var div1:REAL;</layout>
+        </var>
+        <var id="ID1414592894">
+          <type>
+            <id>REAL</id>
+          </type>
+          <id>div2</id>
+          <layout>var div2: REAL;</layout>
+        </var>
         <var id="ID1414475125">
           <type>
             <id>dataraiz</id>
@@ -196,11 +210,11 @@
           <layout>fun sqrt (dsqrt) = Math.sqrt dsqrt;</layout>
         </ml>
         <ml id="ID1414512480">fun register (d,d2,dreg) = if d2=1
-then dreg=d
-else dreg=dreg;
+then 1`(d)
+else 1`(dreg);
           <layout>fun register (d,d2,dreg) = if d2=1
-then dreg=d
-else dreg=dreg;</layout>
+then 1`(d)
+else 1`(dreg);</layout>
         </ml>
         <color id="ID5">
           <id>STRING</id>
@@ -1415,7 +1429,7 @@ else dreg=dreg;</layout>
         </initmark>
       </place>
       <place id="ID1414472142">
-        <posattr x="252.000000"
+        <posattr x="263.000000"
                  y="-14.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -1438,7 +1452,7 @@ else dreg=dreg;</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1414472143">
-          <posattr x="294.500000"
+          <posattr x="305.500000"
                    y="-37.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1452,7 +1466,7 @@ else dreg=dreg;</layout>
                 version="4.0.1">data</text>
         </type>
         <initmark id="ID1414472144">
-          <posattr x="312.000000"
+          <posattr x="299.000000"
                    y="9.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1463,12 +1477,12 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">e3</text>
         </initmark>
       </place>
       <place id="ID1414518732">
-        <posattr x="-224.000000"
-                 y="-143.000000"/>
+        <posattr x="-237.000000"
+                 y="-126.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1490,8 +1504,8 @@ else dreg=dreg;</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1414518733">
-          <posattr x="-175.500000"
-                   y="-166.000000"/>
+          <posattr x="-191.500000"
+                   y="-149.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1501,11 +1515,11 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">BOOL</text>
+                version="4.0.1">data</text>
         </type>
         <initmark id="ID1414518734">
-          <posattr x="-161.000000"
-                   y="-119.000000"/>
+          <posattr x="-198.000000"
+                   y="-102.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1515,7 +1529,7 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">e5</text>
         </initmark>
       </place>
       <trans id="ID1414472133"
@@ -1626,7 +1640,7 @@ else dreg=dreg;</layout>
       </arc>
       <arc id="ID1414472150"
            orientation="TtoP"
-           order="1">
+           order="2">
         <posattr x="0.000000"
                  y="0.000000"/>
         <fillattr colour="White"
@@ -1642,7 +1656,7 @@ else dreg=dreg;</layout>
         <transend idref="ID1414472133"/>
         <placeend idref="ID1414472142"/>
         <annot id="ID1414472151">
-          <posattr x="120.000000"
+          <posattr x="125.000000"
                    y="-3.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1653,7 +1667,7 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">register(d,d2,dreg)</text>
         </annot>
       </arc>
       <arc id="ID1414519283"
@@ -1674,8 +1688,8 @@ else dreg=dreg;</layout>
         <transend idref="ID1414472133"/>
         <placeend idref="ID1414518732"/>
         <annot id="ID1414519284">
-          <posattr x="-94.000000"
-                   y="-58.000000"/>
+          <posattr x="-98.000000"
+                   y="-50.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1686,6 +1700,64 @@ else dreg=dreg;</layout>
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">d2</text>
+        </annot>
+      </arc>
+      <arc id="ID1414594695"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1414472133"/>
+        <placeend idref="ID1414472142"/>
+        <bendpoint id="ID1414598678"
+                   serial="1">
+          <posattr x="18.000000"
+                   y="-97.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <bendpoint id="ID1414598233"
+                   serial="2">
+          <posattr x="252.000000"
+                   y="-97.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <annot id="ID1414594696">
+          <posattr x="146.000000"
+                   y="-86.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">dreg</text>
         </annot>
       </arc>
       <constraints/>
@@ -1940,7 +2012,7 @@ else dreg=dreg;</layout>
         <transend idref="ID1414472370"/>
         <placeend idref="ID1414472376"/>
         <annot id="ID1414472386">
-          <posattr x="-37.000000"
+          <posattr x="-32.000000"
                    y="32.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1951,7 +2023,7 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">d1</text>
+                version="4.0.1">div1</text>
         </annot>
       </arc>
       <arc id="ID1414472387"
@@ -1983,7 +2055,7 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">divisor(d,d1)</text>
+                version="4.0.1">divisor(div1,div2)</text>
         </annot>
       </arc>
       <arc id="ID1414472389"
@@ -2004,7 +2076,7 @@ else dreg=dreg;</layout>
         <transend idref="ID1414472370"/>
         <placeend idref="ID1414472382"/>
         <annot id="ID1414472390">
-          <posattr x="-29.000000"
+          <posattr x="-38.000000"
                    y="-41.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2015,7 +2087,7 @@ else dreg=dreg;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">d</text>
+                version="4.0.1">div2</text>
         </annot>
       </arc>
       <constraints/>
@@ -2055,12 +2127,12 @@ else dreg=dreg;</layout>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2070,7 +2142,7 @@ else dreg=dreg;</layout>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2320,8 +2392,8 @@ else dreg=dreg;</layout>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1414472741"
-                    panx="-24.000000"
-                    pany="-7.000000"
+                    panx="-64.000000"
+                    pany="47.000000"
                     zoom="1.000000"
                     instance="ID1414472154">
             <zorder>
@@ -2339,11 +2411,11 @@ else dreg=dreg;</layout>
           </cpnsheet>
         </sheets>
         <zorder>
-          <position value="3"/>
-          <position value="1"/>
           <position value="0"/>
+          <position value="1"/>
           <position value="2"/>
           <position value="5"/>
+          <position value="3"/>
           <position value="4"/>
         </zorder>
       </cpnbinder>
@@ -2417,7 +2489,7 @@ else dreg=dreg;</layout>
       <IndexNode expanded="false">
         <IndexNode expanded="false"/>
       </IndexNode>
-      <IndexNode expanded="true">
+      <IndexNode expanded="false">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -2443,7 +2515,9 @@ else dreg=dreg;</layout>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
