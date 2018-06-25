@@ -3,7 +3,7 @@
 
 <workspaceElements>
   <generator tool="CPN Tools"
-             version="4.0.1"
+             version="4.0.0"
              format="6"/>
   <cpnet>
     <globbox>
@@ -21,15 +21,16 @@
       </block>
       <block id="ID1">
         <id>Standard declarations</id>
-        <ml id="ID1412341177">val e1 = 1`(4,2)++
-1`(5,3);
-          <layout>val e1 = 1`(4,2)++
-1`(5,3);</layout>
+        <ml id="ID1412341177">val e1 = 1`(2,3)++
+1`(4,5);
+          <layout>val e1 = 1`(2,3)++
+1`(4,5);</layout>
         </ml>
-        <ml id="ID1412404241">val e2 = 1`(4)++
-1`(5);
-          <layout>val e2 = 1`(4)++
-1`(5);</layout>
+        <ml id="ID1414459124">val e2 = 1`(3);
+          <layout>val e2 = 1`(3);</layout>
+        </ml>
+        <ml id="ID1414469880">val e3 = 1`(5);
+          <layout>val e3 = 1`(5);</layout>
         </ml>
         <color id="ID85042">
           <id>UNIT</id>
@@ -58,12 +59,12 @@
           <id>d</id>
           <layout>var d: data;</layout>
         </var>
-        <var id="ID1412408487">
+        <var id="ID1414454497">
           <type>
             <id>data</id>
           </type>
-          <id>sum</id>
-          <layout>var sum: data;</layout>
+          <id>d1</id>
+          <layout>var d1: data;</layout>
         </var>
         <ml id="ID1412338334">val t = 2;
           <layout>val t = 2;</layout>
@@ -97,10 +98,8 @@
           <id>k</id>
           <layout>var k:sel;</layout>
         </var>
-        <ml id="ID1412407057">fun sum (d,d) = 
-sum=d+d;
-          <layout>fun sum (d,d) = 
-sum=d+d;</layout>
+        <ml id="ID1412407057">fun sum (d,d1) = d+d1;
+          <layout>fun sum (d,d1) = d+d1;</layout>
         </ml>
         <color id="ID1412312409">
           <id>INTINF</id>
@@ -160,7 +159,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">conj</text>
+                version="4.0.0">conj</text>
         </type>
         <initmark id="ID1412323332">
           <posattr x="-135.000000"
@@ -174,7 +173,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e1</text>
+                version="4.0.0">e1</text>
         </initmark>
       </place>
       <place id="ID1412323970">
@@ -212,7 +211,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1412323972">
           <posattr x="242.000000"
@@ -226,7 +225,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </initmark>
       </place>
       <trans id="ID1412323492"
@@ -238,7 +237,7 @@ sum=d+d;</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -258,7 +257,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">[s=t]</text>
+                version="4.0.0">[s=t]</text>
         </cond>
         <time id="ID1412323494">
           <posattr x="75.500000"
@@ -272,7 +271,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1412392110">
           <posattr x="95.500000"
@@ -286,7 +285,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1412355344">
           <posattr x="11.000000"
@@ -300,7 +299,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1412323682"
@@ -332,7 +331,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(d,s)</text>
+                version="4.0.0">(d,d1)</text>
         </annot>
       </arc>
       <arc id="ID1412324044"
@@ -364,7 +363,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(d)</text>
+                version="4.0.0">(d)</text>
         </annot>
       </arc>
       <constraints/>
@@ -372,8 +371,8 @@ sum=d+d;</layout>
     <page id="ID1412396709">
       <pageattr name="adder"/>
       <place id="ID1412396717">
-        <posattr x="-168.000000"
-                 y="-14.000000"/>
+        <posattr x="-154.000000"
+                 y="58.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -395,8 +394,8 @@ sum=d+d;</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412396718">
-          <posattr x="-128.500000"
-                   y="-40.000000"/>
+          <posattr x="-114.500000"
+                   y="31.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -406,11 +405,11 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1412396719">
-          <posattr x="-135.000000"
-                   y="12.000000"/>
+          <posattr x="-121.000000"
+                   y="84.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -420,7 +419,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e2</text>
+                version="4.0.0">e2</text>
         </initmark>
       </place>
       <place id="ID1412396720">
@@ -458,7 +457,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1412396722">
           <posattr x="242.000000"
@@ -472,7 +471,59 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
+        </initmark>
+      </place>
+      <place id="ID1414466431">
+        <posattr x="-144.000000"
+                 y="-107.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text></text>
+        <ellipse w="60.000000"
+                 h="46.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="-9.320000"
+                 y="48.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414466432">
+          <posattr x="-104.500000"
+                   y="-133.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">data</text>
+        </type>
+        <initmark id="ID1414466433">
+          <posattr x="-111.000000"
+                   y="-80.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">e3</text>
         </initmark>
       </place>
       <trans id="ID1412396711"
@@ -484,7 +535,7 @@ sum=d+d;</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -504,7 +555,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1412396713">
           <posattr x="75.500000"
@@ -518,7 +569,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1412396714">
           <posattr x="95.500000"
@@ -532,7 +583,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1412396716">
           <posattr x="11.000000"
@@ -546,7 +597,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1412396723"
@@ -567,8 +618,8 @@ sum=d+d;</layout>
         <transend idref="ID1412396711"/>
         <placeend idref="ID1412396717"/>
         <annot id="ID1412396724">
-          <posattr x="-45.000000"
-                   y="-3.000000"/>
+          <posattr x="-44.000000"
+                   y="33.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -578,7 +629,7 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(d)</text>
+                version="4.0.0">d</text>
         </annot>
       </arc>
       <arc id="ID1412396725"
@@ -610,7 +661,39 @@ sum=d+d;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(d)</text>
+                version="4.0.0">sum(d,d1)</text>
+        </annot>
+      </arc>
+      <arc id="ID1414466713"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412396711"/>
+        <placeend idref="ID1414466431"/>
+        <annot id="ID1414466714">
+          <posattr x="-35.000000"
+                   y="-42.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">d1</text>
         </annot>
       </arc>
       <constraints/>
@@ -642,17 +725,12 @@ sum=d+d;</layout>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10006.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10005.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -662,9 +740,34 @@ sum=d+d;</layout>
           <boolean>true</boolean>
         </value>
       </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10006.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.options.discover">
+        <value>
+          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -865,14 +968,14 @@ sum=d+d;</layout>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="325"
-                 y="102"
-                 width="946"
-                 height="660">
+                 x="337"
+                 y="14"
+                 width="813"
+                 height="510">
         <sheets>
           <cpnsheet id="ID2215"
                     panx="-91.812500"
-                    pany="30.500000"
+                    pany="-29.500000"
                     zoom="1.562500"
                     instance="ID2149">
             <zorder>
@@ -880,8 +983,8 @@ sum=d+d;</layout>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1412398066"
-                    panx="-20.000000"
-                    pany="7.000000"
+                    panx="-127.000000"
+                    pany="58.000000"
                     zoom="1.000000"
                     instance="ID1412396727">
             <zorder>
@@ -959,6 +1062,12 @@ sum=d+d;</layout>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false">
@@ -971,15 +1080,11 @@ sum=d+d;</layout>
           <IndexNode expanded="true"/>
         </IndexNode>
         <IndexNode expanded="true">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -987,6 +1092,11 @@ sum=d+d;</layout>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
