@@ -3,7 +3,7 @@
 
 <workspaceElements>
   <generator tool="CPN Tools"
-             version="4.0.1"
+             version="4.0.0"
              format="6"/>
   <cpnet>
     <globbox>
@@ -94,6 +94,13 @@
           <id>dmult2</id>
           <layout>var dmult2: data;</layout>
         </var>
+        <var id="ID1414599944">
+          <type>
+            <id>data</id>
+          </type>
+          <id>addop</id>
+          <layout>var addop : data;</layout>
+        </var>
         <var id="ID1414514527">
           <type>
             <id>data</id>
@@ -154,15 +161,6 @@
           <id>k</id>
           <layout>var k:sel;</layout>
         </var>
-        <ml id="ID1412407057">fun sum (d,d1) = d+d1;
-          <layout>fun sum (d,d1) = d+d1;</layout>
-        </ml>
-        <ml id="ID1414476736">fun mult (d,d1) = d*d1;
-          <layout>fun mult (d,d1) = d*d1;</layout>
-        </ml>
-        <ml id="ID1414551390">fun divisor (d,d1) = d / d1;
-          <layout>fun divisor (d,d1) = d / d1;</layout>
-        </ml>
         <color id="ID1412312409">
           <id>INTINF</id>
           <intinf/>
@@ -206,8 +204,25 @@
           <id>dsqrt</id>
           <layout>var dsqrt: dataraiz;</layout>
         </var>
+        <ml id="ID1412407057">fun sum (dsoma1,dsoma2,addop) = 
+case (addop) of
+    1 =&gt; dsoma1 +dsoma2
+    | 2 =&gt; abs (dsoma1-dsoma2)
+    | 3 =&gt; ((dsoma1+dsoma2) div 4);
+          <layout>fun sum (dsoma1,dsoma2,addop) = 
+case (addop) of
+    1 =&gt; dsoma1 +dsoma2
+    | 2 =&gt; abs (dsoma1-dsoma2)
+    | 3 =&gt; ((dsoma1+dsoma2) div 4);</layout>
+        </ml>
         <ml id="ID1414487191">fun sqrt (dsqrt) = Math.sqrt dsqrt;
           <layout>fun sqrt (dsqrt) = Math.sqrt dsqrt;</layout>
+        </ml>
+        <ml id="ID1414476736">fun mult (d,d1) = d*d1;
+          <layout>fun mult (d,d1) = d*d1;</layout>
+        </ml>
+        <ml id="ID1414551390">fun divisor (d,d1) = d / d1;
+          <layout>fun divisor (d,d1) = d / d1;</layout>
         </ml>
         <ml id="ID1414512480">fun register (d,d2,dreg) = if d2=1
 then 1`(d)
@@ -259,7 +274,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">conj</text>
+                version="4.0.0">conj</text>
         </type>
         <initmark id="ID1412323332">
           <posattr x="-135.000000"
@@ -273,7 +288,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e1</text>
+                version="4.0.0">e1</text>
         </initmark>
       </place>
       <place id="ID1412323970">
@@ -311,7 +326,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">conj</text>
+                version="4.0.0">conj</text>
         </type>
         <initmark id="ID1412323972">
           <posattr x="246.000000"
@@ -325,7 +340,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </initmark>
       </place>
       <trans id="ID1412323492"
@@ -357,7 +372,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">[s=t]</text>
+                version="4.0.0">[s=t]</text>
         </cond>
         <time id="ID1412323494">
           <posattr x="75.500000"
@@ -371,7 +386,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1412392110">
           <posattr x="95.500000"
@@ -385,7 +400,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1412355344">
           <posattr x="11.000000"
@@ -399,7 +414,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1412323682"
@@ -431,7 +446,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(s,k)</text>
+                version="4.0.0">(s,k)</text>
         </annot>
       </arc>
       <arc id="ID1412324044"
@@ -463,7 +478,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">(s,k)</text>
+                version="4.0.0">(s,k)</text>
         </annot>
       </arc>
       <constraints/>
@@ -471,8 +486,8 @@ else 1`(dreg);</layout>
     <page id="ID1412396709">
       <pageattr name="Adder"/>
       <place id="ID1412396717">
-        <posattr x="-154.000000"
-                 y="58.000000"/>
+        <posattr x="-157.000000"
+                 y="59.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -494,8 +509,8 @@ else 1`(dreg);</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412396718">
-          <posattr x="-109.500000"
-                   y="31.000000"/>
+          <posattr x="-112.500000"
+                   y="32.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -505,11 +520,11 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1412396719">
-          <posattr x="-116.000000"
-                   y="84.000000"/>
+          <posattr x="-119.000000"
+                   y="85.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -519,11 +534,11 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e2</text>
+                version="4.0.0">e2</text>
         </initmark>
       </place>
       <place id="ID1412396720">
-        <posattr x="252.000000"
+        <posattr x="336.000000"
                  y="-14.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -546,7 +561,7 @@ else 1`(dreg);</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412396721">
-          <posattr x="294.500000"
+          <posattr x="378.500000"
                    y="-37.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -557,10 +572,10 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1412396722">
-          <posattr x="312.000000"
+          <posattr x="396.000000"
                    y="9.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -571,7 +586,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </initmark>
       </place>
       <place id="ID1414466431">
@@ -609,7 +624,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414466433">
           <posattr x="-107.000000"
@@ -623,7 +638,59 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e3</text>
+                version="4.0.0">e3</text>
+        </initmark>
+      </place>
+      <place id="ID1414599746">
+        <posattr x="55.000000"
+                 y="110.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text></text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414599747">
+          <posattr x="93.500000"
+                   y="86.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">data</text>
+        </type>
+        <initmark id="ID1414599748">
+          <posattr x="87.000000"
+                   y="133.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">e2</text>
         </initmark>
       </place>
       <trans id="ID1412396711"
@@ -655,7 +722,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1412396713">
           <posattr x="75.500000"
@@ -669,7 +736,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1412396714">
           <posattr x="95.500000"
@@ -683,7 +750,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1412396716">
           <posattr x="11.000000"
@@ -697,7 +764,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1412396723"
@@ -718,7 +785,7 @@ else 1`(dreg);</layout>
         <transend idref="ID1412396711"/>
         <placeend idref="ID1412396717"/>
         <annot id="ID1412396724">
-          <posattr x="-20.000000"
+          <posattr x="-21.000000"
                    y="32.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -729,7 +796,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dsoma1</text>
+                version="4.0.0">dsoma1</text>
         </annot>
       </arc>
       <arc id="ID1412396725"
@@ -750,7 +817,7 @@ else 1`(dreg);</layout>
         <transend idref="ID1412396711"/>
         <placeend idref="ID1412396720"/>
         <annot id="ID1412396726">
-          <posattr x="139.000000"
+          <posattr x="173.000000"
                    y="-3.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -761,7 +828,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">sum(dsoma1,dsoma2)</text>
+                version="4.0.0">sum(dsoma1,dsoma2,addop)</text>
         </annot>
       </arc>
       <arc id="ID1414466713"
@@ -793,7 +860,39 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dsoma2</text>
+                version="4.0.0">dsoma2</text>
+        </annot>
+      </arc>
+      <arc id="ID1414599799"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1412396711"/>
+        <placeend idref="ID1414599746"/>
+        <annot id="ID1414599800">
+          <posattr x="79.000000"
+                   y="56.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">addop</text>
         </annot>
       </arc>
       <constraints/>
@@ -835,7 +934,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414471620">
           <posattr x="312.000000"
@@ -849,7 +948,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </initmark>
       </place>
       <place id="ID1414471621">
@@ -887,7 +986,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414471623">
           <posattr x="-109.000000"
@@ -901,7 +1000,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e3</text>
+                version="4.0.0">e3</text>
         </initmark>
       </place>
       <place id="ID1414476949">
@@ -939,7 +1038,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414476951">
           <posattr x="-120.000000"
@@ -953,7 +1052,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e3</text>
+                version="4.0.0">e3</text>
         </initmark>
       </place>
       <trans id="ID1414471609"
@@ -985,7 +1084,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1414471611">
           <posattr x="76.500000"
@@ -999,7 +1098,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1414471612">
           <posattr x="96.500000"
@@ -1013,7 +1112,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1414471614">
           <posattr x="12.000000"
@@ -1027,7 +1126,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1414471626"
@@ -1059,7 +1158,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">mult (dmult1,dmult2)</text>
+                version="4.0.0">mult (dmult1,dmult2)</text>
         </annot>
       </arc>
       <arc id="ID1414471628"
@@ -1091,7 +1190,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dmult2</text>
+                version="4.0.0">dmult2</text>
         </annot>
       </arc>
       <arc id="ID1414477356"
@@ -1123,7 +1222,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dmult1</text>
+                version="4.0.0">dmult1</text>
         </annot>
       </arc>
       <constraints/>
@@ -1165,7 +1264,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dataraiz</text>
+                version="4.0.0">dataraiz</text>
         </type>
         <initmark id="ID1414471739">
           <posattr x="-114.000000"
@@ -1179,7 +1278,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e4</text>
+                version="4.0.0">e4</text>
         </initmark>
       </place>
       <place id="ID1414471740">
@@ -1217,7 +1316,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dataraiz</text>
+                version="4.0.0">dataraiz</text>
         </type>
         <initmark id="ID1414471742">
           <posattr x="312.000000"
@@ -1231,7 +1330,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </initmark>
       </place>
       <trans id="ID1414471731"
@@ -1263,7 +1362,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1414471733">
           <posattr x="75.500000"
@@ -1277,7 +1376,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1414471734">
           <posattr x="95.500000"
@@ -1291,7 +1390,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1414471736">
           <posattr x="11.000000"
@@ -1305,7 +1404,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1414471746"
@@ -1337,7 +1436,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dsqrt</text>
+                version="4.0.0">dsqrt</text>
         </annot>
       </arc>
       <arc id="ID1414471748"
@@ -1369,7 +1468,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">sqrt(dsqrt)</text>
+                version="4.0.0">sqrt(dsqrt)</text>
         </annot>
       </arc>
       <constraints/>
@@ -1377,8 +1476,8 @@ else 1`(dreg);</layout>
     <page id="ID1414472131">
       <pageattr name="Register"/>
       <place id="ID1414472139">
-        <posattr x="-237.000000"
-                 y="55.000000"/>
+        <posattr x="-240.000000"
+                 y="-14.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1400,8 +1499,8 @@ else 1`(dreg);</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1414472140">
-          <posattr x="-192.500000"
-                   y="28.000000"/>
+          <posattr x="-195.500000"
+                   y="-40.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1411,11 +1510,11 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414472141">
-          <posattr x="-199.000000"
-                   y="81.000000"/>
+          <posattr x="-202.000000"
+                   y="12.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1425,7 +1524,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e6</text>
+                version="4.0.0">e6</text>
         </initmark>
       </place>
       <place id="ID1414472142">
@@ -1463,7 +1562,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414472144">
           <posattr x="299.000000"
@@ -1477,7 +1576,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e3</text>
+                version="4.0.0">e3</text>
         </initmark>
       </place>
       <place id="ID1414518732">
@@ -1515,7 +1614,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">data</text>
+                version="4.0.0">data</text>
         </type>
         <initmark id="ID1414518734">
           <posattr x="-198.000000"
@@ -1529,7 +1628,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e5</text>
+                version="4.0.0">e5</text>
         </initmark>
       </place>
       <trans id="ID1414472133"
@@ -1561,7 +1660,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1414472135">
           <posattr x="38.500000"
@@ -1575,7 +1674,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1414472136">
           <posattr x="58.500000"
@@ -1589,7 +1688,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1414472138">
           <posattr x="-26.000000"
@@ -1603,7 +1702,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1414472148"
@@ -1624,8 +1723,8 @@ else 1`(dreg);</layout>
         <transend idref="ID1414472133"/>
         <placeend idref="ID1414472139"/>
         <annot id="ID1414472149">
-          <posattr x="-101.000000"
-                   y="30.000000"/>
+          <posattr x="-104.000000"
+                   y="-3.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1635,7 +1734,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">d</text>
+                version="4.0.0">d</text>
         </annot>
       </arc>
       <arc id="ID1414472150"
@@ -1667,7 +1766,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">register(d,d2,dreg)</text>
+                version="4.0.0">register(d,d2,dreg)</text>
         </annot>
       </arc>
       <arc id="ID1414519283"
@@ -1699,7 +1798,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">d2</text>
+                version="4.0.0">d2</text>
         </annot>
       </arc>
       <arc id="ID1414594695"
@@ -1757,7 +1856,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">dreg</text>
+                version="4.0.0">dreg</text>
         </annot>
       </arc>
       <constraints/>
@@ -1799,7 +1898,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">REAL</text>
+                version="4.0.0">REAL</text>
         </type>
         <initmark id="ID1414472378">
           <posattr x="-116.000000"
@@ -1813,7 +1912,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e7</text>
+                version="4.0.0">e7</text>
         </initmark>
       </place>
       <place id="ID1414472379">
@@ -1851,7 +1950,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">REAL</text>
+                version="4.0.0">REAL</text>
         </type>
         <initmark id="ID1414472381">
           <posattr x="341.000000"
@@ -1865,7 +1964,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </initmark>
       </place>
       <place id="ID1414472382">
@@ -1903,7 +2002,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">REAL</text>
+                version="4.0.0">REAL</text>
         </type>
         <initmark id="ID1414472384">
           <posattr x="-107.000000"
@@ -1917,7 +2016,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">e4</text>
+                version="4.0.0">e4</text>
         </initmark>
       </place>
       <trans id="ID1414472370"
@@ -1949,7 +2048,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1414472372">
           <posattr x="75.500000"
@@ -1963,7 +2062,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1414472373">
           <posattr x="95.500000"
@@ -1977,7 +2076,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1414472375">
           <posattr x="11.000000"
@@ -1991,7 +2090,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1414472385"
@@ -2023,7 +2122,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">div1</text>
+                version="4.0.0">div1</text>
         </annot>
       </arc>
       <arc id="ID1414472387"
@@ -2055,7 +2154,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">divisor(div1,div2)</text>
+                version="4.0.0">divisor(div1,div2)</text>
         </annot>
       </arc>
       <arc id="ID1414472389"
@@ -2087,7 +2186,7 @@ else 1`(dreg);</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">div2</text>
+                version="4.0.0">div2</text>
         </annot>
       </arc>
       <constraints/>
@@ -2127,17 +2226,7 @@ else 1`(dreg);</layout>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10005.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2147,9 +2236,39 @@ else 1`(dreg);</layout>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.options.discover">
+        <value>
+          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -2350,8 +2469,8 @@ else 1`(dreg);</layout>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="651"
-                 y="140"
+                 x="407"
+                 y="31"
                  width="874"
                  height="555">
         <sheets>
@@ -2365,8 +2484,8 @@ else 1`(dreg);</layout>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1412398066"
-                    panx="-58.000000"
-                    pany="-9.750000"
+                    panx="-149.000000"
+                    pany="36.250000"
                     zoom="1.250000"
                     instance="ID1412396727">
             <zorder>
@@ -2393,7 +2512,7 @@ else 1`(dreg);</layout>
           </cpnsheet>
           <cpnsheet id="ID1414472741"
                     panx="-64.000000"
-                    pany="47.000000"
+                    pany="9.000000"
                     zoom="1.000000"
                     instance="ID1414472154">
             <zorder>
@@ -2412,11 +2531,11 @@ else 1`(dreg);</layout>
         </sheets>
         <zorder>
           <position value="0"/>
-          <position value="1"/>
           <position value="2"/>
           <position value="5"/>
           <position value="3"/>
           <position value="4"/>
+          <position value="1"/>
         </zorder>
       </cpnbinder>
     </binders>
@@ -2484,12 +2603,16 @@ else 1`(dreg);</layout>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
-      <IndexNode expanded="false">
+      <IndexNode expanded="false"/>
+      <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -2516,16 +2639,17 @@ else 1`(dreg);</layout>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
