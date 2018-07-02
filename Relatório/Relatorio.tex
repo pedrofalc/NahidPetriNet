@@ -1,0 +1,244 @@
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{siunitx}
+\captionsetup[table]{name=Tabela}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+	
+	\title{	Modelagem de um IP Soft Core utilizando Redes de Petri
+	}
+\author{\IEEEauthorblockN{1\textsuperscript{st} Pedro Lucas Falcão Lima}
+	\IEEEauthorblockA{\textit{Departamento de Teleinformática (DETI)} \\
+		\textit{Universidade Federal do Ceará (UFC)}\\
+		Fortaleza, Brasil \\
+		pedrolfalc@gmail.com}
+	\and
+	\IEEEauthorblockN{2\textsuperscript{nd} Giovanni Cordeiro Barroso}
+	\IEEEauthorblockA{\textit{  Departamento de Teleinformática (DETI)} \\
+		\textit{Universidade Federal do Ceará (UFC)}\\
+		Fortaleza, Brasil \\
+		gcb@fisica.ufc.br}
+	
+}
+ 	\maketitle
+	
+	\renewcommand{\abstractname}{Resumo}
+	\begin{abstract}
+		
+		
+			
+	Sistemas de detecção de intrusão são cada vez mais necessários para garantir a segurança de serviços na internet, uma vez que as ameaças na rede vem desenvolvendo-se cada vez mais. Ataques do tipo DDoS são muito comuns atualmente, uma vez que já existem recursos suficientes para realizar esse tipo de ataque em tempo real. Apesar de existirem soluções em softwares para detectar ataques DDoS, muitas são ineficientes. Nesse trabalho foi modelado um soft ip core para ser implementado em  FPGAs que possuem capacidade de realizar a detecção de ataque DDoS em tempo real, em um tempo de menos de 1 \si{\micro}s. Além disso, o modelo desenvolvido objetiva baixa utilização de recursos, pois busca o mínimo uso de elementos. Por isso a modelagem foi feita utilizando Redes de Petri, que é uma ferramenta que possibilita a construção de modelos compactos e parametrizados. 
+		
+	\end{abstract}
+	
+	
+	\renewcommand{\IEEEkeywordsname}{Palavras-chave}
+	\begin{IEEEkeywords}
+		Redes-em-Chip, falhas, tolerância, simulação, FPGA, desempenho, nuvem.
+	\end{IEEEkeywords}
+	
+	\section{Introdução}
+	
+	
+	As aplicações atuais são cada vez mais complexas, requerendo dos sistemas computacionais modernos, um desempenho cada vez maior. O Avanço da tecnologia de fabricação de circuitos integrados CMOS (complementary metal-oxide-semiconductor), através da miniaturização dos transistores, tornaram os chips capazes de comportar vários cores (ou PE-Processing Elements) operando em paralelo\cite{b2}, além de memórias, e até GPUs (Graphical Processor Units), permitindo assim a elaboração de um sistema computacional completo em um único chip (em inglês Systems-on-Chip - SoCs) \cite{b1}, capaz de lidar com a complexidade das aplicações modernas.  \\ 
+	Por existirem diversos componentes de processamento dentro dos SoCs, torna-se necessário uma comunicação eficiente entre esses elementos, para evitar latência ou caminhos longos ou críticos de determinadas computações. Neste sentido, as redes de interconexões em chip, também conhecidas como Network-on-Chip (NoC) surgiram como uma solução alternativa aos barramentos de comunicação tradicionais. A comunicação entre os elementos que compõem o SoC (PEs e Memórias) e a NoC é feita por meio de adaptadores de rede, sendo uma NoC constituída por roteadores e links, a qual funciona como uma rede de roteadores interligados, os quais se baseiam em conceitos de redes de computadores e sistemas distribuídos para suportar as conexões intrachip entre os PEs. \\
+	As NoCs permitem uma maior escalabilidade e produção de  desempenho requerido por diversos SoCs com alto grau de paralelismo \cite{b3}. Entretanto, a topologia inicial da NoC é um modelo ideal, pois a miniaturização dos transistores, que reduz a área e consumo de energia do circuito integrado também o torna suscetível a falhas causadas por interferências, por desgastes devido ao envelhecimento do circuito ou falhas no processo de fabricação \cite{b4}.\\ Por isso é necessário considerar que NoCs podem possuir topologias irregulares e ainda assim, devem atender os requisitos de desempenho e funcionalidades. Para isso é necessário uma gerência de falhas de modo que seja realizado uma identificação dessas falhas, além de uma estratégia para recuperar o sistema da falha. Silveira, JANS et al \cite{b5} discutem que o algoritmo de roteamento, o mecanismo de implementação e o procedimento de reconfiguração são pontos fundamentais para o correto funcionamento de uma NOC irregular.\\
+	
+	O método utilizado para reconfiguração é de suma importância para a recuperação do sistema, devendo levar em conta o tempo de recuperação, possibilidades de nós alcançáveis na rede, além do desempenho da comunicação entre PEs. Um algoritmo clássico e que se baseia em reconfiguração estática de NoCs é proposto em \cite{b6}, que requer um tempo considerável para recuperar o SoC, o que pode ser crucial em sistemas de tempo real. Por isso, o trabalho \cite{b5} propõe uma mudança significativa no procedimento de reconfiguração, visando a continuidade do funcionamento das NoCs que possuem topologias irregulares, possibilitando um maior desempenho. Além disso, nesse trabalho foi utilizado o conceito de pré-processamento, que busca uma maior otimização do tempo de reconfiguração, uma vez que os sistemas de tempo real possuem requisitos de continuidade de funcionamento. Este trabalho trouxe uma maior eficiência na previsão e recuperação de falhas em tempo real, em relação ao estado da arte. Observou-se que, devido à complexidade deste sistema como um todo, um pequeno tempo de execução requer um longo tempo de simulação, impedindo assim a avaliação de tráfegos reais, executando por períodos maiores. Isso se deve ao fato de que a simulação em nível de computação em ciclo de clock é um gargalo para NoCs com tamanhos mais extensos, e com um grande conjunto de dados ou requisições, uma vez que é um sistema robusto e suas atividades combinacionais possuem um tempo elevado de computação. \\
+	Diante disso, esse projeto baseia-se na replicação do trabalho \cite{b5}, com o objetivo de acelerar sua simulação utilizando um dispositivo FPGA, de forma a obter métricas de tempo, energia e latência, que são de suma importância para avaliação esses sistemas. Propõe-se ainda o uso do Framework MIDAS que tem como principal função otimizar simulações de projeto RTL utilizando FPGAs. No sentido de obter maior eficácia e escalabilidade, propõe-se ainda o uso da infra-estrutura do serviço EC2 F1 da nuvem da Amazon, a qual dispões de FPGAs \textit{high end}, capazes de comportar a simulação de NOCs da ordem de 20x20 ou mais.
+	
+	
+	com o uso de em um circuito reconfigurável utilizando a  arquitetura conhecida como NoC Phoenix \cite{b7}, buscando uma maior eficiência na simulação nesse novo contexto,  
+	
+	\section{Detalhamento Técnico}
+	A NoC Phoenix \cite{b7} é uma arquitetura de PEs intrachip, podendo atuar sobre uma plataforma de processadores (em inglês, MultiProcessor SoC - MPSoC), que utiliza uma topologia com malha 2D como infraestrutura de comunicação, sua divisão consiste em uma parte hardware chamada HwPhoenix (roteadores) e uma parte software chamada OsPhoenix (sistema operacional de cada PE)  (Figura\ref{ArquiteturaBasica}). Basicamente a Phoenix possui uma topologia de  dimensões m × n com roteadores que são conectados entre si por meio de links bidirecionais, sendo que cada roteador possui cinco portas: Norte, Sul, Leste, Oeste e Local(interface de rede).\\
+	
+	\begin{figure}[htbp]
+		\centerline{\includegraphics[scale=0.365]{fig1.jpg}}
+		\caption{Arquitetura básica Phoenix (contendo HwPhoenix e OSPhoenix)}
+		\label{ArquiteturaBasica}
+	\end{figure}
+	
+	Para realizar uma significativa melhora na eficiência da NoC Phoenix, sobretudo na reconfiguração com topologia irregulares, o trabalho de Silveira, JAN \cite{b5} propõe uma Reconfiguração no OSPhoenix, bem como no pré-processamento de cenários. O OSPhoenix é responsável por gerenciar os algoritmos de roteamento e assim carregar as tabelas de roteamento em um dado cenário, por isso é de suma importância que haja uma eficiência na identificação e tratamento em cenários de falha e assim a utilização do algoritmo de roteamento mais eficaz.
+	O pré-processamento realizado encima da Phoenix busca ser assertivo em relação a possíveis falhas para um sistema com variados cenários , e quanto mais cenários processados maior é a cobertura de falhas. O pré-processamento de uma grande quantidade de cenários é um problema muito complexo, pois consome muito tempo e memória. Por isso foram utilizadas técnicas de cobertura de cenários,nível de similaridade de cenários e redução de cenários de cobertura. \\
+	Para a validação do desse pré-processamento, é necessário uma comparação sobretudo em tempo e assertividade de vários cenários. Por isso é requerida uma simulação robusta com diferentes tipos requisições
+	e tamanhos de rede, para assim validar a eficiência dessa importante mudança na NoC. Contudo, vale ressaltar que simulações com grandes cargas de dados realizadas a nível de ciclo em softwares de microarquitetura são demasiadamente lentas, o que dificulta a validação de sistemas reais. Uma alternativa a isso seriam as metodologias de amostragem de simulação, que trabalham com grandes quantidades de dados de forma mais otimizada, porém essas técnicas não apresentam limites de erros, o que pode gerar avaliações erradas do sistema em validação\cite{b9}. Diante disso esse trabalho pretende utilizar uma nova ferramenta de simulação e consequentemente validação da NoC Phoenix com pré-processamento, de forma mais eficaz. Para tal será utilizado uma metodologia conhecida como MIDAS \cite{b8}.\\
+	O MIDAS é um framework de simulação que gera automaticamente um simulador acelerado po FPGA (field programmable gate arrays) a partir de projetos que utilizam o conceito de register-transfer level (RTL), que são projetos que utilizam linguagens de descrição de hardware (HDL) para representar circuitos de mais baixo nível, assim simplificando a implementação da lógica dos projetos. Basicamente o MIDAS possui dois principais agentes o host e alvo, o alvo é a máquina sendo simulada (por exemplo um SoC), já o Host a máquina que executa(alvos) a simulação. Esse host é um FPGA híbrido (FPGA + CPU embutido).\\
+	A arquitetura interna do framework MIDAS que pode ser vista na figura \ref{Midas Arch}, mostra que para realizar a transformação de um projeto RTL em um simulador acelerado por FPGA é necessária a ação de um compilador FIRRTL (Flexible Intermediate Representation for RTL), que é uma representação intermediária para circuitos digitais projetados como uma plataforma para escrever transformações em nível de circuito, FIRRTL representa o circuito elaborado e padronizado que o Chisel HDL produz. Além disso, o FIRRTL representa o circuito imediatamente após a elaboração de Chisel mas antes de qualquer simplificação do circuito \cite{b10}. Dentro do compilador FIRRTL, contemos alguns passos:
+	\begin{itemize}
+		\item \textbf{Macro Mapping (opcional)} : Mapeamento de macro mapeia blocos de memória independentes de tecnologia
+		a blocos macro dependentes de tecnologia para estimativa de energia.
+		\item \textbf{FAME1 Transform}: A transformação FAME1 separa o clock de destino do clock do host anexando sinais de ativação a todos os elementos de estado. Isso permite que partes do simulador parem quando não estão prontas, permitindo que o simulador tolere latências variáveis na plataforma host e assegurando que as simulações sejam determinísticas.
+		\item \textbf{Scan chains (opcional)}: São capturas de estados instantâneos(snapshots) para voltar a realizar na simulação em software a nível RTL para estimação de potência.  
+		\item \textbf{Simulation Mapping}: O mapeamento de simulação envolve o design de destino transformado inserindo canais de token de tempo / buffers de rastreio. O resultado é um módulo de simulação independente de plataforma para simulação baseada em tokens.
+		\item \textbf{Platfom Mapping}: O último passo do compilador MIDAS, liga todos os módulos de simulação hospedados no FPGA com lógica específica da plataforma.
+	\end{itemize}
+	
+	\begin{figure}[htbp]
+		\centerline{\includegraphics[scale=1.4]{fig4.png}}
+		\caption{Passos personalizados do compilador para gerar um simulador RTL acelerado por FPGA
+		}
+		
+		\label{Midas Arch}
+	\end{figure}
+	
+	
+	Diante disso, a principal função do MIDAS é gerar um simulador de alto desempenho em um alvo a partir de projeto RTL, esse mapeamento pode ser visto na Figura \ref{Mapeamento}. 
+	
+	\begin{figure}[htbp]
+		\centerline{\includegraphics[scale=0.14]{fig2.png}}
+		\caption{Mapeamento do projeto alvo para a plataforma de FPGA host -
+			Os dispositivo  \textbf{I/O - Devices} são modelados em software e operam ao lado do \textbf{driver de simulação}, pois  as injeções de dados são mais raros.
+			Em geral, a comunicação realizada entre a um modelo de software do host e um modelo RTL alvo pos
+			sui uma sobrecarga em tempo, por isso existe uma otimização através de  \textbf{I/O- endpoints} , utilizando tokens de tempo que em alto nível  realizam a comunicação com  com o \textbf{DUT} (device under test) utilizando todo o  desempenho de velocidade dos periféricos do FPGA. 
+			Dentro do alvo existe um \textbf{modelo de temporização} que tem a função de memória de acesso à \textbf{memória principal}, essa por sua vez está no host.
+		}
+		
+		\label{Mapeamento}
+	\end{figure}
+	
+	
+	
+	
+	
+	Uma vez que temos todo o arcabouço para realizar uma simulação rápida em MPSoCs é necessário utilizar ferramentas adequadas para tal, de forma que os requisitos principais dessa simulação sejam atendidos. Com isso é necessário o uso de FPGA com alta velocidade e capacidade de processamento. Esse tipo de dispositivo não é tão acessível, devido ao seu alto custo financeiro. Diante disso, esse trabalho utilizará os recursos de uma FPGA com essas especificações entre outras vantagens, como um serviço no ambiente de nuvem Amazon Web Service(AWS).\\
+	A AWS é um plataforma de serviço em nuvem que dispõe de diversos serviços de infra-estrutura, possibilitando usuários ou empresas a utilização desses serviços. A plataforma oferece poder computacional, armazenamento em nuvem distribuição de conteúdo e outros serviços, cada um com sua funcionalidade nas áreas em que são necessários. Dentre esses serviços, existe o EC2F1 que é utilizado para o processamento de dados remoto em FPGAs. O EC2(Amazon Elastic Compute Cloud) é um serviço que fornece acesso aos servidores que possuem os recursos computacionais (essa gerência é realizada sob demanda) , assim o uso do serviço se torna escalável. Um dos tipos de instância EC2 é a EC2 F1, o Amazon EC2 F1 é uma instância de computação com FPGAs que podem ser programadas para criar acelerações de hardware personalizadas para aplicações. Existem outras funcionalidades que essa instância possui, porém este trabalho busca alto desempenho computacional que EC2 F1 disponibiliza. Esse poder de processamento é possível, sobretudo pelas FPGAs que são disponibilizadas na EC2 F1. Essas são Xilinx UltraScale+ VU9P fabricadas em tecnologia de 16 nm, contendo 
+	1.182 LUTs, 2.364 flip-flops, 345.9 Mb de memória e 832 de I/O. Vale ressaltar que essa FPGA é caracterizada por possui as mais altas performances entre os dispositivos produtos da Xilinx. Toda a estrutura disponível pela instância, possui uma estratégia de comunicação para realizar a aceleração baseada em FPGA, isso se dá através de conexões via PCIe (PCI Express) com os elementos de CPU (pós-processadores).\\
+	Para todo o  processo desenvolvimento de um core AWS, é necessário realizar essas tarefas (figura \ref{aws}):
+	\begin{enumerate}
+		\item Desenvolver a Lógica Customizada (Custom Logic - CL), que é basicamente o projeto RTL combinado com as ferramentas de desenvolvimento disponíveis na AMI  (Amazon Machine Image) e o HDK (Hardware Development Kit ).
+		\begin{enumerate}
+			\item FPGA Deveploper
+			AMI: Fornece as informações necessárias para executar uma instância, que é um servidor virtual na nuvem. 
+			\item Kit de desenvolvimento - HDK: 
+			O AWS FPGA HDK é o kit oficial fornecido pela AWS para facilitar o desenvolvimento de RTL (Verilog / VHDL) de uma imagem FPGA da Amazon (AFI).
+		\end{enumerate}
+		\item Combinar a CL com uma lógica fornecida pela AWS chamada de FPGA Shell.
+		\begin{enumerate}
+			\item FPGA SHELL: É a lógica de plataforma AWS responsável por cuidar dos periféricos externos FPGA, PCIe, DRAM e Interrupções.
+		\end{enumerate}
+		\item Criar uma Amazon FPGA Image (AFI) a partir da CL construída.
+		\begin{enumerate}
+			\item AFI: AFI (Amazon FPGA Image) é uma imagem pronta pra ser instanciada na F1, o desenvolvedor pode registrar uma AFI para ser utilizada várias vezes por um uma F1 e/ou pode ser utilizada por várias instâncias F1. 
+		\end{enumerate}
+		\item Carregar a AFI gerada em uma FPGA conectada à instância F1 ou disponilizar no AWS Marketplace.
+		\begin{enumerate}
+			\item AWS Marketplace: O AWS Marketplace é uma loja online que ajuda os c
+			lientes a descobrir, comprar, migrar e começar a usar imediatamente o software e os serviços de que precisam para criar produtos e gerir suas empresas.  
+		\end{enumerate}
+	\end{enumerate}
+	\begin{figure}[htbp]
+		\centerline{\includegraphics[scale=0.400]{fig3.png}}
+		\caption{Processo de desenvolvimento de cores utilizando o serviço EC2 F1 a partir de um projeto RTL}
+		\label{aws}
+	\end{figure}
+	
+	\section{Objetivos}
+	Tendo em vista o cenário de oportunidades de pesquisa com as ferramentas 
+	explicitadas na seção anterior, enumeramos abaixo os objetivos
+	gerais e específicos desta pesquisa.\\
+	
+	\begin{itemize}
+		\item Objetivos Gerais\\
+		\begin{enumerate}
+			\item Propor uma nova metodologia de simulação rápida de MPSoCs, sobretudo do ponto de vista de suas interconexões, tendo em vista que o MIDAS não foi testado em NoCs.
+			\item Implementar o modelo proposto em um NoC que utiliza pré-processamento, caracterizando um modelo tolerante a falhas.
+			\item Realizar a implementação desse serviço e aceleração do mesmo, utilizando o serviço AWS da Amazon.
+			\\
+		\end{enumerate}'
+		\item  Objetivos Específicos
+		\begin{enumerate}
+			\item Estudar o modelo da NoC Phoenix com reconfiguração e pré-processamento, além de implementar em uma linguagem a nível RTL suportada pelo MIDAS (Chisel).
+			\item Fazer estudo sobre arquitetura MIDAS e outros métodos de aceleração de simulação.
+			\item Realizar um estudo do serviço AWS e toda a arquitetura em nuvem necessário para implementação de cores em FPGAs remotos.
+			\\
+		\end{enumerate}
+	\end{itemize}
+	
+	De acordo com os objetivos pré-estabelecidos, segue abaixo uma tabela que descreve as atividades propostas a serem realizadas nesse projeto, bem como a estimativa de tempo de cada uma.\\
+	
+	\begin{table}[htbp]
+		\caption{TABELA DE ATIVIDADES}
+		\begin{center}
+			\renewcommand{\arraystretch}{2}% Spread rows out...
+			\begin{tabular}{|p{5cm}|c|}
+				\hline
+				\centering\textbf{Atividade}&\textbf{Estimativa de Tempo} \\
+				\hline
+				Revisão de literatura sobre NoCs e NoC Phoenix &  Mês 1 e 2  \\
+				\hline
+				Revisão de literatura sobre da Phoenix resiliente a erros, utilizando pré-processamento,além de sua implementação em VHDL/Verilog&   Mês 3   \\
+				\hline
+				Revisão de literatura sobre MIDAS e outras aceleradores de simulação& Mês 4  \\
+				\hline
+				Revisão de literatura sobre o serviço AWS e utilização da EC2 F1& Mês 5  \\
+				\hline
+				Implementação da Medologia de simulação rápida em MPSoCs& Mês 6 a 12  \\
+				\hline
+				Testes do Simulador na NoC phoenix, resiliente a erros, utilizando pré-processamento, bem como a implementação no ambiente de nuvem  & Mês 13  \\
+				\hline
+				Qualificação & Mês 14  \\
+				\hline
+				Comparação dos resultados obtidos
+				com sistemas já existentes & Mês 15 e 16  \\
+				\hline
+				Escrita para congresso & Mês 17  \\
+				\hline
+				Escrita da dissertação & Mês 18 a 20  \\
+				
+				\hline
+				
+			\end{tabular}
+			\label{tab1}
+		\end{center}
+	\end{table}
+	
+	\section{Resultados Esperados}
+	
+	Tendo em vista que as simulações de NoCs com uma maior complexidade (inclusão de técnicas) leva muito tempo para realizar simulações e consequentemente diagnósticos. Esse muitas vezes não é medido de forma mais rigorosa em projetos RTL com simuladores comuns, porém já se sabe que é inviável para uma maior escalabilidades de PEs. Por isso esse  pretendemos fazer uma análise do desempenho atual de simulação desse projeto citado, além de propor uma nova solução de simulação eficiente utilizando as ferramentas que foram citadas nesse documento.
+	Por fim, para tornar viável  metodologia , se faz necessário a comparação com vários simuladores e com diversos tipos de MPSoCs, tornando a proposta viável em outros cenários de uso.
+	
+	
+	\section*{Referências}
+	\renewcommand{\section}[2]{}
+	
+	\begin{thebibliography}{00}
+		\bibitem{b1}  PASRICHA, Sudeep; DUTT, Nikil. On-Chip Communication Architec-
+		tures: System on chip interconnect. San Francisco, CA, USA: Morgan Kaufmann Publishers Inc., 2008.
+		\bibitem{b2}T. E. Kolding, "A four-step method for de-embedding gigahertz on-wafer CMOS measurements," in IEEE Tra
+		nsactions on Electron Devices, vol. 47, no. 4, pp. 734-740, Apr 2000.
+		
+		\bibitem{b3}R. Marculescu, U. Y. Ogras, L. S. Peh, N. E. Jerger and Y. Hoskote, "Outstanding Research Problems in NoC Design: System, Microarchitecture, and Circuit Perspectives," in IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, vol. 28, no. 1, pp. 3-21, Jan. 2009.
+		
+		\bibitem{b4} Jerraya, A. A.; Wolf, W. "Multiprocessor Systems-on-Chips". Em: Morgan
+		Kaufmann Publishers Inc, 2005.
+		\bibitem{b5} SILVEIRA, J. et al. Scenario preprocessing approach for the recon-
+		figuration of fault-tolerant NoC-based MPSoCs. Microprocessors and
+		Microsystems, v. 40, p. 137–153, 2015.
+		\bibitem{b6}  STRANO, A. et al. OSR-Lite: Fast and Deadlock-free NoC Reconfi-
+		guration Framework. International Conference on Embedded Computer
+		Systems (SAMOS), pp. 86-95, 2012.
+		\bibitem{b7} C. Marcon, A. Amory, T. Webber, T. Volpato, L. Poehls, Phoenix NoC:
+		a distributed fault tolerant architecture, in: International Conference on
+		Computer Design (ICCD), 2013.
+		\bibitem{b8} Kim, Donggyu, Christopher Celio, David Biancolin, Jonathan Bachrach and Krste Asanovic. “Evaluation of RISC-V RTL with FPGA-Accelerated Simulation.” (2017).
+		\bibitem{b9} R. E. Wunderlich, T. F. Wenisch, B. Falsafi and J. C. Hoe, "SMARTS: accelerating microarchitecture simulation via rigorous statistical sampling," 30th Annual International Symposium on Computer Architecture, 2003. Proceedings., 2003, pp. 84-95.
+		\bibitem{b10} LI, Patrick S.; IZRAELEVITZ, Adam M.; BACHRACH, Jonathan. Specification for the FIRRTL Language. EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2016-9, 2016.
+		
+	\end{thebibliography}
+	
+	
+\end{document}

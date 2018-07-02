@@ -2226,12 +2226,17 @@ else 1`(dreg);</layout>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10007.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2246,22 +2251,17 @@ else 1`(dreg);</layout>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10005.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10004.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10007.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2484,8 +2484,8 @@ else 1`(dreg);</layout>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1412398066"
-                    panx="-149.000000"
-                    pany="36.250000"
+                    panx="-115.000000"
+                    pany="-0.750000"
                     zoom="1.250000"
                     instance="ID1412396727">
             <zorder>
@@ -2531,11 +2531,11 @@ else 1`(dreg);</layout>
         </sheets>
         <zorder>
           <position value="0"/>
-          <position value="2"/>
           <position value="5"/>
+          <position value="1"/>
+          <position value="2"/>
           <position value="3"/>
           <position value="4"/>
-          <position value="1"/>
         </zorder>
       </cpnbinder>
     </binders>
