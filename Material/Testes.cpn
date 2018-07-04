@@ -255,6 +255,40 @@
           </alias>
           <layout>colset sel = INT timed;</layout>
         </color>
+        <var id="ID1421739911">
+          <type>
+            <id>sel</id>
+          </type>
+          <id>op2a1</id>
+          <layout>var op2a1: sel;</layout>
+        </var>
+        <var id="ID1421741235">
+          <type>
+            <id>sel</id>
+          </type>
+          <id>op1a1</id>
+          <layout>var op1a1: sel;</layout>
+        </var>
+        <var id="ID1421741545">
+          <type>
+            <id>sel</id>
+          </type>
+          <id>cr1</id>
+          <layout>var cr1: sel;</layout>
+        </var>
+        <color id="ID1421738890">
+          <id>sels</id>
+          <timed/>
+          <product>
+            <id>sel</id>
+            <id>sel</id>
+            <id>sel</id>
+          </product>
+          <layout>colset sels = product sel*sel*sel timed;</layout>
+        </color>
+        <ml id="ID1421739175">val listsel = 1`(2,3,4);
+          <layout>val listsel = 1`(2,3,4);</layout>
+        </ml>
         <color id="ID1412329659">
           <id>conj</id>
           <timed/>
@@ -966,8 +1000,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <text>mux2add1</text>
         <ellipse w="85.900000"
                  h="40.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
+        <token x="-26.135759"
+               y="2.482424"/>
         <marking x="-17.196364"
                  y="50.350606"
                  hidden="false">
@@ -976,7 +1010,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="2"/>
         </marking>
         <type id="ID1414732958">
-          <posattr x="-253.050000"
+          <posattr x="-247.000000"
                    y="2.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -1028,8 +1062,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="1"/>
         </marking>
         <type id="ID1414849290">
-          <posattr x="-250.550000"
-                   y="-66.000000"/>
+          <posattr x="-246.000000"
+                   y="-65.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1057,8 +1091,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </initmark>
       </place>
       <place id="ID1414926092">
-        <posattr x="504.000000"
-                 y="126.000000"/>
+        <posattr x="180.000000"
+                 y="225.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1080,8 +1114,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1414926093">
-          <posattr x="560.000000"
-                   y="102.000000"/>
+          <posattr x="236.000000"
+                   y="201.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1094,8 +1128,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 version="4.0.0">sel</text>
         </type>
         <initmark id="ID1414926094">
-          <posattr x="559.000000"
-                   y="149.000000"/>
+          <posattr x="235.000000"
+                   y="248.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1422,7 +1456,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
       </place>
       <place id="ID1420271281">
         <posattr x="-151.000000"
-                 y="223.000000"/>
+                 y="222.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1445,7 +1479,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </marking>
         <type id="ID1420271282">
           <posattr x="-117.000000"
-                   y="199.000000"/>
+                   y="198.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1459,7 +1493,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </type>
         <initmark id="ID1420271283">
           <posattr x="-98.000000"
-                   y="246.000000"/>
+                   y="245.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1473,8 +1507,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </initmark>
       </place>
       <place id="ID1421155527">
-        <posattr x="0.000000"
-                 y="152.000000"/>
+        <posattr x="19.000000"
+                 y="226.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1496,8 +1530,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1421155528">
-          <posattr x="33.000000"
-                   y="128.000000"/>
+          <posattr x="52.000000"
+                   y="202.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1510,8 +1544,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 version="4.0.0">sel</text>
         </type>
         <initmark id="ID1421155529">
-          <posattr x="52.000000"
-                   y="175.000000"/>
+          <posattr x="71.000000"
+                   y="249.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1525,8 +1559,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </initmark>
       </place>
       <place id="ID1421495963">
-        <posattr x="149.000000"
-                 y="367.000000"/>
+        <posattr x="19.000000"
+                 y="420.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1548,8 +1582,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1421495964">
-          <posattr x="183.500000"
-                   y="343.000000"/>
+          <posattr x="55.500000"
+                   y="396.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1559,11 +1593,11 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">INT</text>
+                version="4.0.0">sels</text>
         </type>
         <initmark id="ID1421495965">
-          <posattr x="205.000000"
-                   y="390.000000"/>
+          <posattr x="61.000000"
+                   y="443.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1573,7 +1607,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.0">listsel</text>
         </initmark>
       </place>
       <trans id="ID1412396711"
@@ -1659,7 +1693,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -1733,7 +1767,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -1881,7 +1915,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -1955,7 +1989,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -2007,7 +2041,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </code>
         <priority id="ID1419530641">
           <posattr x="-478.000000"
-                   y="7.412121"/>
+                   y="19.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2029,7 +2063,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -2081,7 +2115,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </code>
         <priority id="ID1419782465">
           <posattr x="-362.000000"
-                   y="91.412121"/>
+                   y="103.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2103,7 +2137,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -2155,7 +2189,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </code>
         <priority id="ID1419941021">
           <posattr x="-362.000000"
-                   y="-204.587879"/>
+                   y="-193.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2177,7 +2211,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -2229,7 +2263,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </code>
         <priority id="ID1419946540">
           <posattr x="-471.000000"
-                   y="-60.587879"/>
+                   y="-49.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2244,14 +2278,14 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
       </trans>
       <trans id="ID1421685273"
              explicit="false">
-        <posattr x="149.000000"
-                 y="294.000000"/>
+        <posattr x="19.000000"
+                 y="315.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -2260,8 +2294,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1421685274">
-          <posattr x="110.000000"
-                   y="313.829091"/>
+          <posattr x="-20.000000"
+                   y="334.829091"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2274,8 +2308,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 version="4.0.0"/>
         </cond>
         <time id="ID1421685275">
-          <posattr x="193.500000"
-                   y="313.829091"/>
+          <posattr x="63.500000"
+                   y="334.829091"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2288,8 +2322,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 version="4.0.0"/>
         </time>
         <code id="ID1421685276">
-          <posattr x="213.500000"
-                   y="253.170909"/>
+          <posattr x="83.500000"
+                   y="274.170909"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2302,8 +2336,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 version="4.0.0"/>
         </code>
         <priority id="ID1421685278">
-          <posattr x="81.000000"
-                   y="274.170909"/>
+          <posattr x="-49.000000"
+                   y="308.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2445,7 +2479,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </annot>
       </arc>
       <arc id="ID1414736341"
-           orientation="PtoT"
+           orientation="BOTHDIR"
            order="1">
         <posattr x="0.000000"
                  y="0.000000"/>
@@ -2509,7 +2543,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         </annot>
       </arc>
       <arc id="ID1414850117"
-           orientation="PtoT"
+           orientation="BOTHDIR"
            order="1">
         <posattr x="0.000000"
                  y="0.000000"/>
@@ -2622,8 +2656,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <transend idref="ID1414932516"/>
         <placeend idref="ID1414926092"/>
         <annot id="ID1414943443">
-          <posattr x="527.500000"
-                   y="54.000000"/>
+          <posattr x="371.500000"
+                   y="110.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3115,8 +3149,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <transend idref="ID1414845240"/>
         <placeend idref="ID1421155527"/>
         <annot id="ID1421634530">
-          <posattr x="-56.000000"
-                   y="94.000000"/>
+          <posattr x="-41.000000"
+                   y="147.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3147,8 +3181,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <transend idref="ID1421685273"/>
         <placeend idref="ID1421495963"/>
         <annot id="ID1421710731">
-          <posattr x="168.000000"
-                   y="324.000000"/>
+          <posattr x="81.500000"
+                   y="362.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3158,7 +3192,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.0">(op2a1,op1a1,cr1)</text>
         </annot>
       </arc>
       <arc id="ID1421717110"
@@ -3179,8 +3213,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <transend idref="ID1421685273"/>
         <placeend idref="ID1414926092"/>
         <annot id="ID1421717111">
-          <posattr x="325.000000"
-                   y="228.000000"/>
+          <posattr x="94.000000"
+                   y="278.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3190,7 +3224,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.0">cr1</text>
         </annot>
       </arc>
       <arc id="ID1421723493"
@@ -3211,8 +3245,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <transend idref="ID1421685273"/>
         <placeend idref="ID1420271281"/>
         <annot id="ID1421723494">
-          <posattr x="-5.000000"
-                   y="272.000000"/>
+          <posattr x="-76.000000"
+                   y="286.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3222,7 +3256,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.0">op2a1</text>
         </annot>
       </arc>
       <arc id="ID1421736255"
@@ -3243,8 +3277,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
         <transend idref="ID1421685273"/>
         <placeend idref="ID1421155527"/>
         <annot id="ID1421736256">
-          <posattr x="91.000000"
-                   y="213.000000"/>
+          <posattr x="43.000000"
+                   y="278.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3254,7 +3288,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.0">op1a1</text>
         </annot>
       </arc>
       <constraints/>
@@ -3441,7 +3475,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="2"/>
         </marking>
         <type id="ID1414876836">
-          <posattr x="-392.800000"
+          <posattr x="-383.000000"
                    y="60.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3493,8 +3527,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1414877757">
-          <posattr x="-392.800000"
-                   y="-108.000000"/>
+          <posattr x="-383.000000"
+                   y="-107.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3604,7 +3638,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -3678,7 +3712,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -5606,32 +5640,12 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10006.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10007.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10008.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -5641,7 +5655,27 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <boolean>true</boolean>
         </value>
       </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -5849,10 +5883,10 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="209"
-                 y="21"
-                 width="1144"
-                 height="652">
+                 x="178"
+                 y="-3"
+                 width="1216"
+                 height="671">
         <sheets>
           <cpnsheet id="ID2215"
                     panx="-149.812500"
@@ -5864,8 +5898,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1412398066"
-                    panx="-54.194679"
-                    pany="-6.366602"
+                    panx="-160.194679"
+                    pany="80.633398"
                     zoom="0.805664"
                     instance="ID1412396727">
             <zorder>
@@ -6035,6 +6069,11 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
