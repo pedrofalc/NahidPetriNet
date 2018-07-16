@@ -3,7 +3,7 @@
 
 <workspaceElements>
   <generator tool="CPN Tools"
-             version="4.0.1"
+             version="4.0.0"
              format="6"/>
   <cpnet>
     <globbox>
@@ -117,7 +117,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">entradas</text>
+                version="4.0.0">entradas</text>
         </type>
         <initmark id="ID1412323903">
           <posattr x="-200.000000"
@@ -131,7 +131,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">vx</text>
+                version="4.0.0">vx</text>
         </initmark>
       </place>
       <place id="ID1412324288">
@@ -169,7 +169,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">entradas</text>
+                version="4.0.0">entradas</text>
         </type>
         <initmark id="ID1412324290">
           <posattr x="-196.000000"
@@ -183,7 +183,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">vy</text>
+                version="4.0.0">vy</text>
         </initmark>
       </place>
       <trans id="ID1412326875"
@@ -195,7 +195,7 @@ x::y</layout>
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text></text>
@@ -215,7 +215,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </cond>
         <time id="ID1412326877">
           <posattr x="25.500000"
@@ -229,7 +229,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </time>
         <code id="ID1412326878">
           <posattr x="45.500000"
@@ -243,7 +243,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </code>
         <priority id="ID1412326880">
           <posattr x="-87.000000"
@@ -257,7 +257,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </priority>
       </trans>
       <arc id="ID1412327163"
@@ -289,7 +289,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </annot>
       </arc>
       <arc id="ID1412327457"
@@ -321,7 +321,7 @@ x::y</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.0"/>
         </annot>
       </arc>
       <constraints/>
@@ -356,12 +356,7 @@ x::y</layout>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10005.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10004.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -371,9 +366,34 @@ x::y</layout>
           <boolean>true</boolean>
         </value>
       </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.options.discover">
+        <value>
+          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -658,11 +678,15 @@ x::y</layout>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
