@@ -87,9 +87,6 @@
           <id>STRING</id>
           <string/>
         </color>
-        <block id="ID1412413906">
-          <id>New Block</id>
-        </block>
         <ml id="ID1412346073">fun loadInput (v1,v2) =
 case (List.nth(v1,3),List.nth(v2,3)) of 
 (0,0) =&gt;  [0,0,0,0,0,0]
@@ -993,9 +990,7 @@ else 1`(dreg);</layout>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
@@ -1016,7 +1011,6 @@ else 1`(dreg);</layout>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
