@@ -5883,8 +5883,8 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="178"
-                 y="-3"
+                 x="549"
+                 y="51"
                  width="1216"
                  height="671">
         <sheets>
@@ -6043,9 +6043,7 @@ List.take (x,y-1)^^(z::List.drop(x,y));</layout>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>

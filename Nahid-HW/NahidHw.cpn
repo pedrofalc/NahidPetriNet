@@ -87,18 +87,16 @@
           <id>STRING</id>
           <string/>
         </color>
-        <ml id="ID1412339987">fun inDP (v1,v2) = 
-v1^^v2;
-          <layout>fun inDP (v1,v2) = 
-v1^^v2;</layout>
-        </ml>
-        <ml id="ID1412346073">fun Loadinput (v1,v2) =
+        <block id="ID1412413906">
+          <id>New Block</id>
+        </block>
+        <ml id="ID1412346073">fun loadInput (v1,v2) =
 case (List.nth(v1,3),List.nth(v2,3)) of 
 (0,0) =&gt;  [0,0,0,0,0,0]
 |(0,1) =&gt; List.take(v1,3)^^List.take(v2,3)
 |(1,0) =&gt; List.take(v2,3)^^List.take(v1,3)
 |(1,1) =&gt;[0,0,0,0,0,0]
-          <layout>fun Loadinput (v1,v2) =
+          <layout>fun loadInput (v1,v2) =
 case (List.nth(v1,3),List.nth(v2,3)) of 
 (0,0) =&gt;  [0,0,0,0,0,0]
 |(0,1) =&gt; List.take(v1,3)^^List.take(v2,3)
@@ -118,10 +116,32 @@ case(sel) of
 |3=&gt;e3
 |4=&gt;e4;</layout>
         </ml>
-        <ml id="ID1412412841">fun sizeMult(l1)=
-List.length(l1)
-          <layout>fun sizeMult(l1)=
-List.length(l1)</layout>
+        <ml id="ID1412413353">fun sum (dsoma1,dsoma2,addop) = 
+case (addop) of
+    1 =&gt; dsoma1 +dsoma2
+    | 2 =&gt; abs (dsoma1-dsoma2)
+    | 3 =&gt; ((dsoma1+dsoma2) div 4);
+          <layout>fun sum (dsoma1,dsoma2,addop) = 
+case (addop) of
+    1 =&gt; dsoma1 +dsoma2
+    | 2 =&gt; abs (dsoma1-dsoma2)
+    | 3 =&gt; ((dsoma1+dsoma2) div 4);</layout>
+        </ml>
+        <ml id="ID1412413391">fun sqrt (dsqrt) = Math.sqrt dsqrt;
+          <layout>fun sqrt (dsqrt) = Math.sqrt dsqrt;</layout>
+        </ml>
+        <ml id="ID1412413441">fun mult (d,d1) = d*d1;
+          <layout>fun mult (d,d1) = d*d1;</layout>
+        </ml>
+        <ml id="ID1412413503">fun divisor (d,d1) = d / d1;
+          <layout>fun divisor (d,d1) = d / d1;</layout>
+        </ml>
+        <ml id="ID1412413577">fun register (d,d2,dreg) = if d2=1
+then 1`(d)
+else 1`(dreg);
+          <layout>fun register (d,d2,dreg) = if d2=1
+then 1`(d)
+else 1`(dreg);</layout>
         </ml>
       </block>
     </globbox>
@@ -576,7 +596,7 @@ List.length(l1)</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">Loadinput(in1,in2)</text>
+                version="4.0.0">loadInput(in1,in2)</text>
         </annot>
       </arc>
       <arc id="ID1412402844"
@@ -887,8 +907,8 @@ List.length(l1)</layout>
                  height="583">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="-409.000000"
-                    pany="-2.000000"
+                    panx="-385.000000"
+                    pany="-10.000000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
@@ -996,10 +1016,14 @@ List.length(l1)</layout>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="true"/>
