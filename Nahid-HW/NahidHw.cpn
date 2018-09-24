@@ -2490,7 +2490,7 @@ Muxs</text>
     <page id="ID1413816544">
       <pageattr name="multiplexerA"/>
       <place id="ID1413816552">
-        <posattr x="-378.000000"
+        <posattr x="-336.000000"
                  y="-64.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -2514,7 +2514,7 @@ Div</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413816553">
-          <posattr x="-345.500000"
+          <posattr x="-303.500000"
                    y="-87.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2528,7 +2528,7 @@ Div</text>
                 version="4.0.1">es</text>
         </type>
         <initmark id="ID1413816554">
-          <posattr x="-332.000000"
+          <posattr x="-290.000000"
                    y="-40.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2543,7 +2543,7 @@ Div</text>
         </initmark>
         <port id="ID1413816620"
               type="In">
-          <posattr x="-402.000000"
+          <posattr x="-360.000000"
                    y="-80.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3227,7 +3227,7 @@ Muxs</text>
         <transend idref="ID1414027783"/>
         <placeend idref="ID1413816552"/>
         <annot id="ID1414100184">
-          <posattr x="-273.000000"
+          <posattr x="-252.000000"
                    y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -7142,17 +7142,12 @@ Div</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
       <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7163,6 +7158,11 @@ Div</text>
         </value>
       </option>
       <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7539,9 +7539,7 @@ Div</text>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
