@@ -1350,7 +1350,7 @@ Redundante</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">rem(l1,v)</text>
+                version="4.0.1">rmall v l1</text>
         </annot>
       </arc>
       <arc id="ID1415741840"
@@ -2421,8 +2421,8 @@ acumula.</text>
                  height="779">
         <sheets>
           <cpnsheet id="ID1415065698"
-                    panx="-502.750000"
-                    pany="50.500000"
+                    panx="-526.750000"
+                    pany="33.500000"
                     zoom="1.250000"
                     instance="ID1415062092">
             <zorder>
@@ -2509,9 +2509,7 @@ acumula.</text>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
