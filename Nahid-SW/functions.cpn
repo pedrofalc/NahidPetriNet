@@ -176,6 +176,13 @@ in
 List.drop(l,s)
 end</layout>
         </ml>
+        <color id="ID1416496315">
+          <id>lint</id>
+          <list>
+            <id>INT</id>
+          </list>
+          <layout>colset lint = list INT;</layout>
+        </color>
         <ml id="ID1414380909">fun inc(k)=k+1;
           <layout>fun inc(k)=k+1;</layout>
         </ml>
@@ -234,6 +241,89 @@ else []</layout>
 log2(real(List.length(list2)-List.length(list)) / real(List.length(list2)))*real(List.length(list2)-List.length(list)) / real(List.length(list2))
           <layout>fun logprob(list, list2)=
 log2(real(List.length(list2)-List.length(list)) / real(List.length(list2)))*real(List.length(list2)-List.length(list)) / real(List.length(list2))</layout>
+        </ml>
+        <ml id="ID1416495550">fun entropia(l) =
+let
+val backup = l
+val listclear = remdupl (l)
+val t = length backup
+
+fun log2 (c)= Math.ln c/ Math.ln 2.0;
+
+fun count(s,nil,contador) = contador
+  |  count(s,ls,contador) =
+ let
+  val head = hd ls
+  val tail = tl ls
+ in
+ if s = head then count(s,tail,contador + 1) else count(s,tail, contador)
+ end
+
+fun contall(nil,backup,resultado) = resultado
+    | contall(listclear,backup,resultado)=
+ let
+   val head = hd listclear
+   val tail = tl listclear
+ in
+   
+  contall(tail,backup,count(head,backup,0)::resultado)
+  
+ end
+
+fun somatorio(nil, t , resreal) = resreal 
+     | somatorio(resultado, t , resreal) =
+  let
+     val head =hd resultado
+     val tail = tl resultado
+   in
+     somatorio(tail,t, (real head / real t)  * log2(real head / real t) + resreal)
+
+   end 
+
+in
+somatorio(contall(listclear,backup,nil), t , 0.0)
+end
+          <layout>fun entropia(l) =
+let
+val backup = l
+val listclear = remdupl (l)
+val t = length backup
+
+fun log2 (c)= Math.ln c/ Math.ln 2.0;
+
+fun count(s,nil,contador) = contador
+  |  count(s,ls,contador) =
+ let
+  val head = hd ls
+  val tail = tl ls
+ in
+ if s = head then count(s,tail,contador + 1) else count(s,tail, contador)
+ end
+
+fun contall(nil,backup,resultado) = resultado
+    | contall(listclear,backup,resultado)=
+ let
+   val head = hd listclear
+   val tail = tl listclear
+ in
+   
+  contall(tail,backup,count(head,backup,0)::resultado)
+  
+ end
+
+fun somatorio(nil, t , resreal) = resreal 
+     | somatorio(resultado, t , resreal) =
+  let
+     val head =hd resultado
+     val tail = tl resultado
+   in
+     somatorio(tail,t, (real head / real t)  * log2(real head / real t) + resreal)
+
+   end 
+
+in
+somatorio(contall(listclear,backup,nil), t , 0.0)
+end</layout>
         </ml>
       </block>
     </globbox>
@@ -660,6 +750,58 @@ Backup</text>
                 version="4.0.0"/>
         </initmark>
       </place>
+      <place id="ID1416496094">
+        <posattr x="630.000000"
+                 y="210.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text></text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1416496095">
+          <posattr x="669.500000"
+                   y="186.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">REAL</text>
+        </type>
+        <initmark id="ID1416496096">
+          <posattr x="686.000000"
+                   y="233.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0"/>
+        </initmark>
+      </place>
       <trans id="ID1415694036"
              explicit="false">
         <posattr x="210.000000"
@@ -1029,6 +1171,80 @@ duplicados</text>
         <priority id="ID1416368431">
           <posattr x="-48.000000"
                    y="-36.600000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0"/>
+        </priority>
+      </trans>
+      <trans id="ID1416496025"
+             explicit="false">
+        <posattr x="630.000000"
+                 y="84.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text></text>
+        <box w="136.000000"
+             h="40.000000"/>
+        <binding x="7.200000"
+                 y="-3.000000"/>
+        <cond id="ID1416496026">
+          <posattr x="553.000000"
+                   y="115.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0"/>
+        </cond>
+        <time id="ID1416496027">
+          <posattr x="712.500000"
+                   y="115.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0"/>
+        </time>
+        <code id="ID1416496028">
+          <posattr x="732.500000"
+                   y="32.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0"/>
+        </code>
+        <priority id="ID1416496030">
+          <posattr x="524.000000"
+                   y="53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1766,6 +1982,70 @@ duplicados</text>
                 version="4.0.0">l1</text>
         </annot>
       </arc>
+      <arc id="ID1416496487"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1416496025"/>
+        <placeend idref="ID1416496094"/>
+        <annot id="ID1416496488">
+          <posattr x="589.000000"
+                   y="147.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">entropia(l1)</text>
+        </annot>
+      </arc>
+      <arc id="ID1416496558"
+           orientation="BOTHDIR"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1416496025"/>
+        <placeend idref="ID1415693979"/>
+        <annot id="ID1416496559">
+          <posattr x="414.500000"
+                   y="-40.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.0">l1</text>
+        </annot>
+      </arc>
       <constraints/>
     </page>
     <instances>
@@ -1793,17 +2073,7 @@ duplicados</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10005.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10006.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -1813,7 +2083,17 @@ duplicados</text>
           <boolean>true</boolean>
         </value>
       </option>
+      <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2016,8 +2296,8 @@ duplicados</text>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="445"
-                 y="36"
+                 x="280"
+                 y="31"
                  width="1351"
                  height="685">
         <sheets>
@@ -2037,9 +2317,17 @@ duplicados</text>
                      decl="ID1415703580">
             <zorder/>
           </textsheet>
+          <textsheet id="ID1416495559"
+                     panx="7.000000"
+                     pany="14.000000"
+                     zoom="1.000000"
+                     decl="ID1416495550">
+            <zorder/>
+          </textsheet>
         </sheets>
         <zorder>
           <position value="1"/>
+          <position value="2"/>
           <position value="0"/>
         </zorder>
       </cpnbinder>
@@ -2119,16 +2407,14 @@ duplicados</text>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
         </IndexNode>
-        <IndexNode expanded="true">
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
+        <IndexNode expanded="false">
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -2146,10 +2432,14 @@ duplicados</text>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
