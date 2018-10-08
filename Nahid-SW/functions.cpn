@@ -3,7 +3,7 @@
 
 <workspaceElements>
   <generator tool="CPN Tools"
-             version="4.0.0"
+             version="4.0.1"
              format="6"/>
   <cpnet>
     <globbox>
@@ -244,82 +244,96 @@ log2(real(List.length(list2)-List.length(list)) / real(List.length(list2)))*real
         </ml>
         <ml id="ID1416495550">fun entropia(l) =
 let
-val backup = l
-val listclear = remdupl (l)
-val t = length backup
+val backup = l (*variavel &quot;backup&quot; guarda a lista inicial*)
+val listclear = remdupl (l)  (*variavel &quot;listclear&quot; guarda a lista inicial sem elementos repetidos*)
+val t = length backup (*variavel &quot;t&quot; guarda o tamanho da lista inicial*)
 
-fun log2 (c)= Math.ln c/ Math.ln 2.0;
+fun log2 (c)= Math.ln c/ Math.ln 2.0; (*funcao que devolve o resultado do logaritmo de um numero na base 2/ c: representa o numero em vai ser calculado o log*)
 
-fun count(s,nil,contador) = contador
-  |  count(s,ls,contador) =
- let
-  val head = hd ls
-  val tail = tl ls
- in
- if s = head then count(s,tail,contador + 1) else count(s,tail, contador)
- end
+
+fun count(s,nil,contador) = 
+contador
+| count(s,ls,contador) =
+let
+val head = hd ls
+val tail = tl ls
+in
+if s = head then count(s,tail,contador + 1) else count(s,tail, contador)
+end; 
+(*funcao que conta o numero de aparicoes de um elemento numa dada lista 
+s: representa o numero em que sera contado 
+ls:representa a lista que contm os elementos que sero contados  
+contador: representa a contagem do elemento em questao*)
 
 fun contall(nil,backup,resultado) = resultado
-    | contall(listclear,backup,resultado)=
- let
-   val head = hd listclear
-   val tail = tl listclear
- in
-   
-  contall(tail,backup,count(head,backup,0)::resultado)
-  
- end
+| contall(listclear,backup,resultado)=
+let
+val head = hd listclear
+val tail = tl listclear
+in
+contall(tail,backup,count(head,backup,0)::resultado)
+end
+(*funcao que coloca em uma lista o numero de aparicoes de elementos diferentes de uma dada lista  
+ resultado: representa uma lista com a contagem de cada elemento da lista listclear*)
 
 fun somatorio(nil, t , resreal) = resreal 
-     | somatorio(resultado, t , resreal) =
-  let
-     val head =hd resultado
-     val tail = tl resultado
-   in
-     somatorio(tail,t, (real head / real t)  * log2(real head / real t) + resreal)
-
-   end 
+| somatorio(resultado, t , resreal) =
+let
+val head =hd resultado
+val tail = tl resultado
+in
+somatorio(tail,t, (real head / real t)  * log2(real head / real t) + resreal)
+end 
+(*funcao que aplica uma formula matematica a todos elementos de uma lista e soma esses resultados de operacao, devolvendo um resultado final (no formato real)
+resreal:resultado da soma dos calculos de cada elemento da lista*)
 
 in
 somatorio(contall(listclear,backup,nil), t , 0.0)
 end
           <layout>fun entropia(l) =
 let
-val backup = l
-val listclear = remdupl (l)
-val t = length backup
+val backup = l (*variavel &quot;backup&quot; guarda a lista inicial*)
+val listclear = remdupl (l)  (*variavel &quot;listclear&quot; guarda a lista inicial sem elementos repetidos*)
+val t = length backup (*variavel &quot;t&quot; guarda o tamanho da lista inicial*)
 
-fun log2 (c)= Math.ln c/ Math.ln 2.0;
+fun log2 (c)= Math.ln c/ Math.ln 2.0; (*funcao que devolve o resultado do logaritmo de um numero na base 2/ c: representa o numero em vai ser calculado o log*)
 
-fun count(s,nil,contador) = contador
-  |  count(s,ls,contador) =
- let
-  val head = hd ls
-  val tail = tl ls
- in
- if s = head then count(s,tail,contador + 1) else count(s,tail, contador)
- end
+
+fun count(s,nil,contador) = 
+contador
+| count(s,ls,contador) =
+let
+val head = hd ls
+val tail = tl ls
+in
+if s = head then count(s,tail,contador + 1) else count(s,tail, contador)
+end; 
+(*funcao que conta o numero de aparicoes de um elemento numa dada lista 
+s: representa o numero em que sera contado 
+ls:representa a lista que contm os elementos que sero contados  
+contador: representa a contagem do elemento em questao*)
 
 fun contall(nil,backup,resultado) = resultado
-    | contall(listclear,backup,resultado)=
- let
-   val head = hd listclear
-   val tail = tl listclear
- in
-   
-  contall(tail,backup,count(head,backup,0)::resultado)
-  
- end
+| contall(listclear,backup,resultado)=
+let
+val head = hd listclear
+val tail = tl listclear
+in
+contall(tail,backup,count(head,backup,0)::resultado)
+end
+(*funcao que coloca em uma lista o numero de aparicoes de elementos diferentes de uma dada lista  
+ resultado: representa uma lista com a contagem de cada elemento da lista listclear*)
 
 fun somatorio(nil, t , resreal) = resreal 
-     | somatorio(resultado, t , resreal) =
-  let
-     val head =hd resultado
-     val tail = tl resultado
-   in
-     somatorio(tail,t, (real head / real t)  * log2(real head / real t) + resreal)
-
-   end 
+| somatorio(resultado, t , resreal) =
+let
+val head =hd resultado
+val tail = tl resultado
+in
+somatorio(tail,t, (real head / real t)  * log2(real head / real t) + resreal)
+end 
+(*funcao que aplica uma formula matematica a todos elementos de uma lista e soma esses resultados de operacao, devolvendo um resultado final (no formato real)
+resreal:resultado da soma dos calculos de cada elemento da lista*)
 
 in
 somatorio(contall(listclear,backup,nil), t , 0.0)
@@ -364,7 +378,7 @@ end</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">REAL</text>
+                version="4.0.1">REAL</text>
         </type>
         <initmark id="ID1415257076">
           <posattr x="-469.000000"
@@ -378,7 +392,7 @@ end</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">0.0</text>
+                version="4.0.1">0.0</text>
         </initmark>
       </place>
       <place id="ID1415693979">
@@ -417,7 +431,7 @@ inicial</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">liststring</text>
+                version="4.0.1">liststring</text>
         </type>
         <initmark id="ID1415693981">
           <posattr x="252.500000"
@@ -431,7 +445,7 @@ inicial</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">listinit</text>
+                version="4.0.1">listinit</text>
         </initmark>
       </place>
       <place id="ID1415719387">
@@ -471,7 +485,7 @@ data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">liststring</text>
+                version="4.0.1">liststring</text>
         </type>
         <initmark id="ID1415719389">
           <posattr x="391.000000"
@@ -485,7 +499,7 @@ data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </initmark>
       </place>
       <place id="ID1415726811">
@@ -523,7 +537,7 @@ data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">liststring</text>
+                version="4.0.1">liststring</text>
         </type>
         <initmark id="ID1415726813">
           <posattr x="392.000000"
@@ -537,7 +551,7 @@ data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </initmark>
       </place>
       <place id="ID1415778886">
@@ -575,7 +589,7 @@ data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">REAL</text>
+                version="4.0.1">REAL</text>
         </type>
         <initmark id="ID1415778888">
           <posattr x="496.000000"
@@ -589,7 +603,7 @@ data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">0.0</text>
+                version="4.0.1">0.0</text>
         </initmark>
       </place>
       <place id="ID1416192331">
@@ -629,7 +643,7 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">liststring</text>
+                version="4.0.1">liststring</text>
         </type>
         <initmark id="ID1416192333">
           <posattr x="497.000000"
@@ -643,7 +657,7 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">[]</text>
+                version="4.0.1">[]</text>
         </initmark>
       </place>
       <place id="ID1416368178">
@@ -681,7 +695,7 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">liststring</text>
+                version="4.0.1">liststring</text>
         </type>
         <initmark id="ID1416368180">
           <posattr x="150.000000"
@@ -695,7 +709,7 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </initmark>
       </place>
       <place id="ID1416396038">
@@ -733,7 +747,7 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">STRING</text>
+                version="4.0.1">STRING</text>
         </type>
         <initmark id="ID1416396040">
           <posattr x="197.000000"
@@ -747,11 +761,11 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </initmark>
       </place>
       <place id="ID1416496094">
-        <posattr x="630.000000"
+        <posattr x="770.000000"
                  y="210.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -774,7 +788,7 @@ Backup</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1416496095">
-          <posattr x="669.500000"
+          <posattr x="809.500000"
                    y="186.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -785,10 +799,10 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">REAL</text>
+                version="4.0.1">REAL</text>
         </type>
         <initmark id="ID1416496096">
-          <posattr x="686.000000"
+          <posattr x="826.000000"
                    y="233.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -799,7 +813,61 @@ Backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
+        </initmark>
+      </place>
+      <place id="ID1416497332">
+        <posattr x="771.000000"
+                 y="-168.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text>Lista
+inicial
+function</text>
+        <ellipse w="64.000000"
+                 h="58.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="-16.000000"
+                 y="-24.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1416497333">
+          <posattr x="823.000000"
+                   y="-198.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">liststring</text>
+        </type>
+        <initmark id="ID1416497334">
+          <posattr x="814.500000"
+                   y="-137.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">listinit</text>
         </initmark>
       </place>
       <trans id="ID1415694036"
@@ -833,7 +901,7 @@ lista/dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l2&lt;&gt;[] andalso l3=[]</text>
+                version="4.0.1">l2&lt;&gt;[] andalso l3=[]</text>
         </cond>
         <time id="ID1415694038">
           <posattr x="269.700000"
@@ -847,7 +915,7 @@ lista/dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </time>
         <code id="ID1415694039">
           <posattr x="289.700000"
@@ -861,7 +929,7 @@ lista/dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </code>
         <priority id="ID1415694041">
           <posattr x="126.800000"
@@ -875,7 +943,7 @@ lista/dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </priority>
       </trans>
       <trans id="ID1415718277"
@@ -910,7 +978,7 @@ do dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </cond>
         <time id="ID1415718279">
           <posattr x="395.700000"
@@ -924,7 +992,7 @@ do dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </time>
         <code id="ID1415718280">
           <posattr x="415.700000"
@@ -938,7 +1006,7 @@ do dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </code>
         <priority id="ID1415718282">
           <posattr x="252.800000"
@@ -952,7 +1020,7 @@ do dado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </priority>
       </trans>
       <trans id="ID1415755695"
@@ -986,7 +1054,7 @@ resultado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </cond>
         <time id="ID1415755697">
           <posattr x="512.900000"
@@ -1000,7 +1068,7 @@ resultado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </time>
         <code id="ID1415755698">
           <posattr x="532.900000"
@@ -1014,7 +1082,7 @@ resultado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </code>
         <priority id="ID1415755700">
           <posattr x="387.600000"
@@ -1028,7 +1096,7 @@ resultado</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </priority>
       </trans>
       <trans id="ID1416216408"
@@ -1062,7 +1130,7 @@ backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l2=[]</text>
+                version="4.0.1">l2=[]</text>
         </cond>
         <time id="ID1416216410">
           <posattr x="506.500000"
@@ -1076,7 +1144,7 @@ backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </time>
         <code id="ID1416216411">
           <posattr x="526.500000"
@@ -1090,7 +1158,7 @@ backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </code>
         <priority id="ID1416216413">
           <posattr x="394.000000"
@@ -1104,7 +1172,7 @@ backup</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </priority>
       </trans>
       <trans id="ID1416368426"
@@ -1138,7 +1206,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </cond>
         <time id="ID1416368428">
           <posattr x="80.500000"
@@ -1152,7 +1220,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </time>
         <code id="ID1416368429">
           <posattr x="100.500000"
@@ -1166,7 +1234,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </code>
         <priority id="ID1416368431">
           <posattr x="-48.000000"
@@ -1180,29 +1248,31 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </priority>
       </trans>
       <trans id="ID1416496025"
              explicit="false">
-        <posattr x="630.000000"
-                 y="84.000000"/>
+        <posattr x="770.000000"
+                 y="42.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text></text>
-        <box w="136.000000"
-             h="40.000000"/>
+        <text>Entropia 
+com 
+funcao</text>
+        <box w="66.000000"
+             h="46.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1416496026">
-          <posattr x="553.000000"
-                   y="115.000000"/>
+          <posattr x="728.000000"
+                   y="76.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1212,11 +1282,11 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </cond>
         <time id="ID1416496027">
-          <posattr x="712.500000"
-                   y="115.000000"/>
+          <posattr x="817.500000"
+                   y="76.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1226,11 +1296,11 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </time>
         <code id="ID1416496028">
-          <posattr x="732.500000"
-                   y="32.000000"/>
+          <posattr x="837.500000"
+                   y="-13.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1240,11 +1310,11 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </code>
         <priority id="ID1416496030">
-          <posattr x="524.000000"
-                   y="53.000000"/>
+          <posattr x="699.000000"
+                   y="8.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1254,7 +1324,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0"/>
+                version="4.0.1"/>
         </priority>
       </trans>
       <arc id="ID1415720495"
@@ -1286,7 +1356,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">rmall v l1</text>
+                version="4.0.1">rmall v l1</text>
         </annot>
       </arc>
       <arc id="ID1415741840"
@@ -1318,7 +1388,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1415742884"
@@ -1350,7 +1420,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1415759302"
@@ -1382,7 +1452,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l2</text>
+                version="4.0.1">l2</text>
         </annot>
       </arc>
       <arc id="ID1415779599"
@@ -1414,7 +1484,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">c+logprob(l2,l1)</text>
+                version="4.0.1">c+logprob(l2,l1)</text>
         </annot>
       </arc>
       <arc id="ID1416202588"
@@ -1446,7 +1516,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1416218165"
@@ -1478,7 +1548,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1416219919"
@@ -1510,7 +1580,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1416225173"
@@ -1542,7 +1612,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l2</text>
+                version="4.0.1">l2</text>
         </annot>
       </arc>
       <arc id="ID1416246445"
@@ -1587,7 +1657,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l2</text>
+                version="4.0.1">l2</text>
         </annot>
       </arc>
       <arc id="ID1416367027"
@@ -1619,7 +1689,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">c</text>
+                version="4.0.1">c</text>
         </annot>
       </arc>
       <arc id="ID1416368231"
@@ -1664,7 +1734,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">remdupl l1</text>
+                version="4.0.1">remdupl l1</text>
         </annot>
       </arc>
       <arc id="ID1416368497"
@@ -1709,7 +1779,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">v::l1</text>
+                version="4.0.1">v::l1</text>
         </annot>
       </arc>
       <arc id="ID1416435569"
@@ -1754,7 +1824,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">v</text>
+                version="4.0.1">v</text>
         </annot>
       </arc>
       <arc id="ID1416436599"
@@ -1799,7 +1869,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l3</text>
+                version="4.0.1">l3</text>
         </annot>
       </arc>
       <arc id="ID1415829750"
@@ -1870,7 +1940,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1415694074"
@@ -1902,7 +1972,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1416480262"
@@ -1947,7 +2017,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">v</text>
+                version="4.0.1">v</text>
         </annot>
       </arc>
       <arc id="ID1416480551"
@@ -1979,7 +2049,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <arc id="ID1416496487"
@@ -2000,8 +2070,8 @@ duplicados</text>
         <transend idref="ID1416496025"/>
         <placeend idref="ID1416496094"/>
         <annot id="ID1416496488">
-          <posattr x="589.000000"
-                   y="147.000000"/>
+          <posattr x="729.000000"
+                   y="128.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2011,11 +2081,11 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">entropia(l1)</text>
+                version="4.0.1">entropia(l1)</text>
         </annot>
       </arc>
-      <arc id="ID1416496558"
-           orientation="BOTHDIR"
+      <arc id="ID1416497649"
+           orientation="PtoT"
            order="1">
         <posattr x="0.000000"
                  y="0.000000"/>
@@ -2030,10 +2100,10 @@ duplicados</text>
         <arrowattr headsize="1.200000"
                    currentcyckle="2"/>
         <transend idref="ID1416496025"/>
-        <placeend idref="ID1415693979"/>
-        <annot id="ID1416496559">
-          <posattr x="414.500000"
-                   y="-40.000000"/>
+        <placeend idref="ID1416497332"/>
+        <annot id="ID1416497650">
+          <posattr x="780.500000"
+                   y="-60.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2043,7 +2113,7 @@ duplicados</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.0">l1</text>
+                version="4.0.1">l1</text>
         </annot>
       </arc>
       <constraints/>
@@ -2073,7 +2143,7 @@ duplicados</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2088,12 +2158,12 @@ duplicados</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -2296,14 +2366,14 @@ duplicados</text>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="280"
-                 y="31"
-                 width="1351"
-                 height="685">
+                 x="397"
+                 y="77"
+                 width="1642"
+                 height="805">
         <sheets>
           <cpnsheet id="ID1415065698"
-                    panx="-552.700000"
-                    pany="32.550000"
+                    panx="-477.700000"
+                    pany="40.550000"
                     zoom="1.000000"
                     instance="ID1415062092">
             <zorder>
@@ -2317,17 +2387,9 @@ duplicados</text>
                      decl="ID1415703580">
             <zorder/>
           </textsheet>
-          <textsheet id="ID1416495559"
-                     panx="7.000000"
-                     pany="14.000000"
-                     zoom="1.000000"
-                     decl="ID1416495550">
-            <zorder/>
-          </textsheet>
         </sheets>
         <zorder>
           <position value="1"/>
-          <position value="2"/>
           <position value="0"/>
         </zorder>
       </cpnbinder>
@@ -2407,7 +2469,7 @@ duplicados</text>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
         </IndexNode>
-        <IndexNode expanded="false">
+        <IndexNode expanded="true">
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
