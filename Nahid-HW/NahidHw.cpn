@@ -379,9 +379,21 @@ else 1`(dreg);</layout>
           <layout>fun tmp (k)=List.nth(k,0);</layout>
         </ml>
         <ml id="ID1414274595">fun resulMux (lai,lav,lc)=
- (lai,List.nth(lav,List.nth(lc,lai)))
+let
+
+val s = length lav
+
+ in
+(lai,List.nth(lav,List.nth(lc,lai-1)))
+end
           <layout>fun resulMux (lai,lav,lc)=
- (lai,List.nth(lav,List.nth(lc,lai)))</layout>
+let
+
+val s = length lav
+
+ in
+(lai,List.nth(lav,List.nth(lc,lai-1)))
+end</layout>
         </ml>
       </block>
     </globbox>
@@ -2896,7 +2908,7 @@ Muxs</text>
                y="0.000000"/>
         <marking x="7.000000"
                  y="-44.000000"
-                 hidden="false">
+                 hidden="true">
           <snap snap_id="0"
                 anchor.horizontal="1"
                 anchor.vertical="1"/>
@@ -2930,6 +2942,58 @@ Muxs</text>
                 version="4.0.1"/>
         </initmark>
       </place>
+      <place id="ID1414355081">
+        <posattr x="252.000000"
+                 y="-210.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <text></text>
+        <ellipse w="60.000000"
+                 h="40.000000"/>
+        <token x="-10.000000"
+               y="0.000000"/>
+        <marking x="0.000000"
+                 y="0.000000"
+                 hidden="false">
+          <snap snap_id="0"
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
+        </marking>
+        <type id="ID1414355082">
+          <posattr x="298.000000"
+                   y="-233.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">signals</text>
+        </type>
+        <initmark id="ID1414355083">
+          <posattr x="308.000000"
+                   y="-186.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1"/>
+        </initmark>
+      </place>
       <trans id="ID1413852070"
              explicit="false">
         <posattr x="252.000000"
@@ -2945,8 +3009,8 @@ Muxs</text>
         <text></text>
         <box w="20.000000"
              h="40.000000"/>
-        <binding x="-47.800000"
-                 y="140.000000"/>
+        <binding x="-282.800000"
+                 y="78.750000"/>
         <cond id="ID1413852071">
           <posattr x="233.000000"
                    y="-33.000000"/>
@@ -3271,7 +3335,7 @@ Muxs</text>
         </annot>
       </arc>
       <arc id="ID1414311702"
-           orientation="BOTHDIR"
+           orientation="PtoT"
            order="1">
         <posattr x="0.000000"
                  y="0.000000"/>
@@ -3302,7 +3366,53 @@ Muxs</text>
                 version="4.0.1">con1</text>
         </annot>
       </arc>
+      <arc id="ID1414355227"
+           orientation="TtoP"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413852070"/>
+        <placeend idref="ID1414355081"/>
+        <annot id="ID1414355228">
+          <posattr x="282.000000"
+                   y="-137.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">#2 con1</text>
+        </annot>
+      </arc>
       <constraints/>
+      <Aux id="ID1414348601">
+        <posattr x="-168.000000"
+                 y="-67.750000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>Text</text>
+      </Aux>
     </page>
     <page id="ID1413818932">
       <pageattr name="adder"/>
@@ -7203,7 +7313,7 @@ Div</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7213,12 +7323,12 @@ Div</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7426,8 +7536,8 @@ Div</text>
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="626"
-                 y="103"
+                 x="299"
+                 y="96"
                  width="1549"
                  height="818">
         <sheets>
@@ -7441,9 +7551,9 @@ Div</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413849186"
-                    panx="-389.000000"
-                    pany="-73.000000"
-                    zoom="1.000000"
+                    panx="-225.400000"
+                    pany="-132.200000"
+                    zoom="0.800000"
                     instance="ID1413816596">
             <zorder>
               <position value="0"/>
